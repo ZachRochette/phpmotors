@@ -48,6 +48,6 @@ nav li a {
 }
 
 nav li a:hover {
-  color: #c00;
-  background-color: #fff;
+  color: black;
+  background-color: #4c96d7;
 }
