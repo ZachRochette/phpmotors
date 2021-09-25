@@ -56,5 +56,6 @@ nav li a:hover {
 
 /*------- Border -------*/
 #wrapper {
-  border: 5px solid red;
+  border: 5px solid #4c96d7;
+  border-radius: 15px 15px 15px 15px;
 }
