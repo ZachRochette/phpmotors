@@ -2,6 +2,7 @@
 /*font-family: 'Gemunu Libre', sans-serif;
 font-family: 'Source Code Pro', monospace;*/
 
+/*----- Fonts ----*/
 p {
   font-family: "Source Code Pro", monospace;
 }
@@ -15,4 +16,11 @@ h4 {
 
 a {
   font-family: "Gemunu Libre", sans-serif;
+}
+
+/*-------- Nav -------*/
+nav {
+  width: 100%;
+  float: left;
+  background-color: #3a3a3a;
 }
