@@ -22,7 +22,7 @@
             <p>3 Cup holders</p>
             <p>Superman doors</p>
             <p>Fuzzy dice!</p>
-            <input type="image" src="/phpmotors/images/site/own_today.png" />
+            <input class="button" type="image" src="/phpmotors/images/site/own_today.png" />
 
         </main>
         <hr>
