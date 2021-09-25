@@ -36,6 +36,15 @@
                 <p>Hub Caps</p>
             </div>
             <h2 id="reviews">DMC Delorean Reviews</h2>
+            <div>
+                <ul>
+                    <li>"So fast its almost like traveling in time." (4/5)</li>
+                    <li>"Coolest ride on the road." (4/5)</li>
+                    <li>"I'm feeling Marty McFly!" (5/5)</li>
+                    <li>"The most futuristic ride of our day." (4.5/5)</li>
+                    <li>"80;s livin and I love it!" (5/5)</li>
+                </ul>
+            </div>
         </main>
         <hr>
         <footer>
