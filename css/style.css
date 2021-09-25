@@ -53,3 +53,8 @@ nav li a:hover {
   margin-top: -10px;
   font-size: large;
 }
+
+/*------- Border -------*/
+#wrapper {
+  border: 5px solid red;
+}
