@@ -46,47 +46,11 @@ nav li a {
   color: #ffffff;
 }
 
-/*nav li a:hover {
+nav li a:hover {
   color: black;
   background-color: #4c96d7;
   font-family: "Source Code Pro", monospace;
   padding: 100px;
-  transition: transform 1s; /* Animation 
+  transition: transform 1s; /* Animation */
   margin: 0 auto;
-}*/
-
-ul {
-  margin: 0 10%;
-  padding: 10px 0px 10px 100px;
-  display: flex;
-  background: #4c96d7;
-}
-
-ul li {
-  list-style: none;
-  padding: 10px 20px;
-}
-
-ul li a {
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: bold;
-  color: black;
-  position: relative;
-}
-
-ul li a::before {
-  content: "";
-  width: 0px;
-  height: 10px;
-  background: black;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  transition: 0.5s;
-}
-
-ul li a:hover::before {
-  width: 50%;
-  transform: translateX(100%);
 }
