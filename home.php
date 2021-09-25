@@ -14,7 +14,6 @@
 
         </header>
         <nav>
-            <ul>
 
         </nav>
         <main>
