@@ -40,11 +40,8 @@ nav li a {
   text-decoration: none;
   font-weight: bold;
   color: #ffffff;
-  border-right: 1px solid #ccc;
 }
-nav li:first-child a {
-  border-left: 1px solid #ccc;
-}
+
 nav li a:hover {
   color: #c00;
   background-color: #fff;
