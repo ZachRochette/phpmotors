@@ -90,7 +90,7 @@ footer {
 
 /*---------- Media Query For large screens only ---------*/
 @media only screen and (max-width: 1200px) {
-  body {
+  #wrapper {
     background-color: lightblue;
   }
 }
