@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre&family=Source+Code+Pro&display=swap");
 /*font-family: 'Gemunu Libre', sans-serif;
 font-family: 'Source Code Pro', monospace;*/
+
 /*------ Background Image ------*/
 body {
   background-image: url("/phpmotors/images/site/small_check.jpg");
@@ -58,7 +59,7 @@ nav li a:hover {
   font-size: large;
 }
 
-/*------- Border -------*/
+/*------- Main section -------*/
 #wrapper {
   border: 5px solid #4c96d7;
   border-radius: 15px 15px 15px 15px;
@@ -66,4 +67,8 @@ nav li a:hover {
   margin-left: 10%;
   margin-right: 10%;
   background-color: #fff;
+}
+
+hr {
+  border: 5px solid;
 }
