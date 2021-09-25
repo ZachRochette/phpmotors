@@ -24,8 +24,8 @@
             <p>Fuzzy dice!</p>
             <input class="button" alt="Own Today Button" type="image" src="/phpmotors/images/site/own_today.png" />
             <img src="/phpmotors/images/delorean.jpg" alt="Delorean image" id="delorean_image">
-            <h2>Delorean Upgrades</h2>
-            <h2>DMC Delorean Reviews</h2>
+            <h2 id="upgrades">Delorean Upgrades</h2>
+            <h2 id="reviews">DMC Delorean Reviews</h2>
         </main>
         <hr>
         <footer>
