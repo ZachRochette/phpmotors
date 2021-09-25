@@ -17,7 +17,12 @@
             <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php'; ?>
         </nav>
         <main>
-            <h1>Content Title Here</h1>
+            <h1>Welcome to PHP Motors!</h1>
+            <p>DMC Delorean</p>
+            <p>3 Cup holders</p>
+            <p>Superman doors</p>
+            <p>Fuzzy dice!</p>
+            <button type="button">Own Today</button>
         </main>
         <hr>
         <footer>
