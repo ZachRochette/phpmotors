@@ -11,17 +11,17 @@
 <body>
     <div id="wrapper">
         <header>
-
+            <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
         </header>
         <nav>
-
+            <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php'; ?>
         </nav>
         <main>
             <h1>Content Title Here</h1>
         </main>
         <hr>
         <footer>
-
+            <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>
         </footer>
     </div>
 </body>
