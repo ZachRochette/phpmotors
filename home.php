@@ -23,7 +23,7 @@
             <p>Superman doors</p>
             <p>Fuzzy dice!</p>
             <input class="button" alt="Own Today Button" type="image" src="/phpmotors/images/site/own_today.png" />
-            <img src="images/upgrades/delorean.png" alt="Delorean image" id="delorean_image">
+            <img src="images/delorean.png" alt="Delorean image" id="delorean_image">
 
         </main>
         <hr>
