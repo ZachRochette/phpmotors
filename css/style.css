@@ -35,7 +35,9 @@ nav ul {
   margin: 0 auto;
   padding: 0;
 }
-
+nav li {
+  float: left;
+}
 nav li a {
   display: block;
   padding: 20px 15px;
