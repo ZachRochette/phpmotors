@@ -50,6 +50,6 @@ nav li a:hover {
   color: black;
   background-color: #4c96d7;
   font-family: "Source Code Pro", monospace;
-  transition: transform 1s; /* Animation */
-  margin: -10px auto;
+  margin-top: -15px auto;
+  margin-bottom: -15px auto;
 }
