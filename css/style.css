@@ -71,11 +71,6 @@ nav li a:hover {
 
 /*------- Main section -------*/
 #wrapper {
-  border: 5px solid #4c96d7;
-  border-radius: 15px 15px 15px 15px;
-  max-width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
   background-color: #fff;
 }
 
@@ -89,8 +84,12 @@ footer {
 }
 
 /*---------- Media Query For large screens only ---------*/
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 480px) {
   #wrapper {
-    background-color: lightblue;
+    border: 5px solid #4c96d7;
+    border-radius: 15px 15px 15px 15px;
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
