@@ -22,7 +22,8 @@
             <p>3 Cup holders</p>
             <p>Superman doors</p>
             <p>Fuzzy dice!</p>
-            <button type="button">Own Today</button>
+            <input type="image" src="/phpmotors/images/site/own_today.png" />
+
         </main>
         <hr>
         <footer>
