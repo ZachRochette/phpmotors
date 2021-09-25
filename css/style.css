@@ -51,10 +51,8 @@ nav li a:hover,
   color: black;
   background-color: #4c96d7;
   font-family: "Source Code Pro", monospace;
-  padding: 50px;
-  transition: transform 0.2s; /* Animation */
-  width: 200px;
-  height: 200px;
+  padding: 10px;
+  transition: transform 1s; /* Animation */
   margin: 0 auto;
 }
 
