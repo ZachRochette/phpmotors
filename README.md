@@ -1,7 +1,7 @@
 # CSE 340 – Winter 2021
 
-- Name: Your Name Here
-- email: yourname@email.com
+- Name: Zach Rochette
+- email: zachrochette@hotmail.com
 
 # PHPMotors
 
