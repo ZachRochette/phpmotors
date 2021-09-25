@@ -25,6 +25,12 @@
             <input class="button" alt="Own Today Button" type="image" src="/phpmotors/images/site/own_today.png" />
             <img src="/phpmotors/images/delorean.jpg" alt="Delorean image" id="delorean_image">
             <h2 id="upgrades">Delorean Upgrades</h2>
+            <div class="upgrades">
+                <img src="/phpmotors/images/upgrades/flux-cap.png" alt="Flux Capacitor image">
+                <img src="/phpmotors/images/upgrades/flame.jpg" alt="Flame Decals image">
+                <img src="/phpmotors/images/upgrades/bumper_sticker.jpg" alt="Bumper Stickers image">
+                <img src="/phpmotors/images/upgrades/hub-cap.jpg" alt="Hub Caps image">
+            </div>
             <h2 id="reviews">DMC Delorean Reviews</h2>
         </main>
         <hr>
