@@ -18,6 +18,9 @@ a {
   font-family: "Gemunu Libre", sans-serif;
 }
 
+#acc {
+  font-family: "Source Code Pro", monospace;
+}
 /*-------- Nav -------*/
 nav {
   width: 100%;
