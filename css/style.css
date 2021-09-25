@@ -87,3 +87,10 @@ hr {
 footer {
   text-align: center;
 }
+
+/*---------- Media Query For large screens only ---------*/
+@media only screen and (max-width: 1200px) {
+  body {
+    background-color: lightblue;
+  }
+}
