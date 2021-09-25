@@ -46,7 +46,8 @@ nav li a {
   color: #ffffff;
 }
 
-nav li a:hover .zoom {
+nav li a:hover,
+.zoom {
   color: black;
   background-color: #4c96d7;
   font-family: "Source Code Pro", monospace;
