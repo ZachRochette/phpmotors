@@ -27,6 +27,7 @@ a {
   font-family: "Source Code Pro", monospace;
   text-decoration: none;
   color: #3a3a3a;
+  padding: 10px;
 }
 /*-------- Nav -------*/
 nav {
