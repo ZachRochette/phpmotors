@@ -59,6 +59,6 @@ nav li a:hover {
   border: 5px solid #4c96d7;
   border-radius: 15px 15px 15px 15px;
   max-width: 80%;
-  padding-left: 10%;
-  padding-right: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
