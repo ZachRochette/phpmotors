@@ -3,7 +3,7 @@
 font-family: 'Source Code Pro', monospace;*/
 /*------ Background Image ------*/
 body {
-  background-image: "phpmotors/images/site/small_check.jpg";
+  background-image: "/phpmotors/images/site/small_check.jpg";
 }
 
 /*----- Fonts ----*/
