@@ -20,6 +20,8 @@ a {
 
 #acc {
   font-family: "Source Code Pro", monospace;
+  text-decoration: none;
+  color: #3a3a3a;
 }
 /*-------- Nav -------*/
 nav {
