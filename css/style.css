@@ -46,13 +46,10 @@ nav li a {
   color: #ffffff;
 }
 
-nav li a:hover {
+nav li a:hover .zoom {
   color: black;
   background-color: #4c96d7;
   font-family: "Source Code Pro", monospace;
-}
-
-.zoom {
   padding: 50px;
   transition: transform 0.2s; /* Animation */
   width: 200px;
