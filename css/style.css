@@ -58,4 +58,5 @@ nav li a:hover {
 #wrapper {
   border: 5px solid #4c96d7;
   border-radius: 15px 15px 15px 15px;
+  max-width: 800px;
 }
