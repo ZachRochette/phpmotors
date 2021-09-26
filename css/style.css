@@ -133,6 +133,10 @@ hr {
   line-height: 80%;
 }
 
+.upgrade_box5 {
+  grid-row: 3;
+}
+
 /*-------- Footer --------*/
 footer {
   text-align: center;
