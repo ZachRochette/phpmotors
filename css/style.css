@@ -90,7 +90,7 @@ hr {
 }
 
 /*----------Upgrades and Reviews-----------  */
-.grid-container {
+.grid_container {
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-gap: 10px;
@@ -98,7 +98,7 @@ hr {
   padding: 10px;
 }
 
-.grid-container > div {
+.grid_container > div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 20px 0;
