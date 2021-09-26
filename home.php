@@ -28,14 +28,22 @@
             <img id="delorean_image" src="/phpmotors/images/delorean.jpg" alt="Delorean image">
             <h2 id="upgrades">Delorean Upgrades</h2>
             <div class="upgrades">
-                <img class="upgrade_data" src="/phpmotors/images/upgrades/flux-cap.png" alt="Flux Capacitor image">
-                <a class="upgrade_data" href="#" title="Flux Capacitor">Flux Capacitor</a>
-                <img class="upgrade_data" src="/phpmotors/images/upgrades/flame.jpg" alt="Flame Decals image">
-                <a class="upgrade_data" href="#" title="Flame Decals">Flame Decals</a>
-                <img class="upgrade_data" src="/phpmotors/images/upgrades/bumper_sticker.jpg" alt="Bumper Stickers image">
-                <a class="upgrade_data" href="#" title="Bumper Stickers">Bumper Stickers</a>
-                <img class="upgrade_data" src="/phpmotors/images/upgrades/hub-cap.jpg" alt="Hub Caps image">
-                <a class="upgrade_data" href="#" title="Hub Caps">Hub Caps</a>
+                <div class="upgrade_box">
+                    <img class="upgrade_img" src="/phpmotors/images/upgrades/flux-cap.png" alt="Flux Capacitor image">
+                    <a class="upgrade_links" href="#" title="Flux Capacitor">Flux Capacitor</a>
+                </div>
+                <div class="upgrade_box">
+                    <img class="upgrade_img" src="/phpmotors/images/upgrades/flame.jpg" alt="Flame Decals image">
+                    <a class="upgrade_links" href="#" title="Flame Decals">Flame Decals</a>
+                </div>
+                <div class="upgrade_box">
+                    <img class="upgrade_img" src="/phpmotors/images/upgrades/bumper_sticker.jpg" alt="Bumper Stickers image">
+                    <a class="upgrade_links" href="#" title="Bumper Stickers">Bumper Stickers</a>
+                </div>
+                <div class="upgrade_box">
+                    <img class="upgrade_img" src="/phpmotors/images/upgrades/hub-cap.jpg" alt="Hub Caps image">
+                    <a class="upgrade_links" href="#" title="Hub Caps">Hub Caps</a>
+                </div>
             </div>
             <h2 id="reviews">DMC Delorean Reviews</h2>
             <div>
