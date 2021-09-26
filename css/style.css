@@ -90,6 +90,7 @@ hr {
 
 /*----------Upgrades-----------  */
 .upgrade_img {
+  padding: 25px;
   background-color: #4c96d7;
   border: 1px solid black;
 }
