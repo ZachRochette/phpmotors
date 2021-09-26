@@ -26,8 +26,8 @@
             </div>
             <input class="button" alt="Own Today Button" type="image" src="/phpmotors/images/site/own_today.png" />
             <img id="delorean_image" src="/phpmotors/images/delorean.jpg" alt="Delorean image">
-            <h2 id="upgrades">Delorean Upgrades</h2>
             <div class="upgrades">
+                <h2 id="upgrades">Delorean Upgrades</h2>
                 <div class="upgrade_box">
                     <img class="upgrade_img" src="/phpmotors/images/upgrades/flux-cap.png" alt="Flux Capacitor image">
                     <a class="upgrade_links" href="#" title="Flux Capacitor">Flux Capacitor</a>
@@ -45,8 +45,8 @@
                     <a class="upgrade_links" href="#" title="Hub Caps">Hub Caps</a>
                 </div>
             </div>
-            <h2 id="reviews">DMC Delorean Reviews</h2>
             <div>
+                <h2 id="reviews">DMC Delorean Reviews</h2>
                 <ul>
                     <li>"So fast its almost like traveling in time." (4/5)</li>
                     <li>"Coolest ride on the road." (4/5)</li>
