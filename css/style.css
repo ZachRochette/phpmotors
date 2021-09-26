@@ -69,6 +69,7 @@ nav li a:hover {
   color: #4c96d7;
   font-weight: bold;
   padding-left: 3em;
+  line-height: 80%;
 }
 
 #delorean_image {
