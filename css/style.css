@@ -75,6 +75,9 @@ nav li a:hover {
   width: 100%;
 }
 
+.button {
+  padding-left: 5em;
+}
 /*------- Main section -------*/
 #wrapper {
   background-color: #fff;
