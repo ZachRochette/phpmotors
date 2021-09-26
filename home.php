@@ -44,8 +44,8 @@
                     <img class="upgrade_img" src="/phpmotors/images/upgrades/hub-cap.jpg" alt="Hub Caps image">
                     <a class="upgrade_links" href="#" title="Hub Caps">Hub Caps</a>
                 </div>
-                <h2 id="reviews">DMC Delorean Reviews</h2>
                 <div class="upgrade_box5">
+                    <h2 id="reviews">DMC Delorean Reviews</h2>
                     <ul>
                         <li>"So fast its almost like traveling in time." (4/5)</li>
                         <li>"Coolest ride on the road." (4/5)</li>

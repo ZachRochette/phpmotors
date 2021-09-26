@@ -90,12 +90,7 @@ hr {
 }
 
 /*----------Upgrades and Reviews-----------  */
-#upgrades {
-  margin-bottom: -25px;
-}
 
-#reviews {
-}
 .upgrade_img {
   padding-left: 50%;
   padding-right: 50%;
@@ -162,5 +157,9 @@ footer {
 
   .grid_container > div {
     margin: 10%;
+  }
+
+  #upgrades {
+    margin-bottom: -25px;
   }
 }
