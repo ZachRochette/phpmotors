@@ -80,8 +80,8 @@ footer {
 
 #delorean_image {
   max-width: 80%;
-  margin-right: 200px;
-  margin-left: 200px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 /*---------- Media Query For large screens only ---------*/
