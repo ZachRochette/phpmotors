@@ -78,6 +78,12 @@ footer {
   text-align: center;
 }
 
+#delorean_image {
+  max-width: 80%;
+  margin-right: 200px;
+  margin-left: 200px;
+}
+
 /*---------- Media Query For large screens only ---------*/
 @media only screen and (min-width: 480px) {
   #wrapper {
@@ -91,11 +97,5 @@ footer {
   /*------ Background Image ------*/
   body {
     background-image: url("/phpmotors/images/site/small_check.jpg");
-  }
-
-  #delorean_image {
-    max-width: 80%;
-    margin-right: 200px;
-    margin-left: 200px;
   }
 }
