@@ -97,12 +97,6 @@ hr {
   padding: 10px;
 }
 
-.grid_container > div {
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-}
-
 .upgrade_img {
   padding-left: 50%;
   padding-right: 50%;
