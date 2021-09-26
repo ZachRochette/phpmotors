@@ -1,13 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre&family=Source+Code+Pro&display=swap");
 /*font-family: 'Gemunu Libre', sans-serif;
 font-family: 'Source Code Pro', monospace;*/
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 10px;
-  background-color: #2196f3;
-  padding: 10px;
-}
 
 /*--- Logo ---*/
 #logo {
@@ -97,6 +90,9 @@ hr {
 }
 
 /*----------Upgrades-----------  */
+.upgrades {
+  max-width: 50%;
+}
 .upgrade_img {
   padding-left: 10%;
   padding-right: 10%;
@@ -105,7 +101,6 @@ hr {
   background-color: #4c96d7;
   border: 1px solid black;
   margin: 1em;
-  grid-column: 1 / 3;
 }
 
 /*-------- Footer --------*/
