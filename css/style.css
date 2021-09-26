@@ -63,12 +63,16 @@ nav li a:hover {
   margin-top: -10px;
   font-size: large;
 }
+/*-------Delorean content and image--------*/
 
 #delorean_info {
   color: #4c96d7;
   font-weight: bold;
   padding-left: 25px;
-  line-height: -10px;
+}
+
+#delorean_image {
+  width: 100%;
 }
 
 /*------- Main section -------*/
