@@ -108,32 +108,27 @@ hr {
   grid-column: 1;
   text-align: center;
   line-height: 80%;
-  margin: 25px;
 }
 
 .upgrade_box2 {
   grid-column: 2;
   text-align: center;
   line-height: 80%;
-  margin: 25px;
 }
 
 .upgrade_box3 {
   text-align: center;
   line-height: 80%;
-  margin: 25px;
 }
 
 .upgrade_box4 {
   text-align: center;
   line-height: 80%;
-  margin: 25px;
 }
 
 .upgrade_box5 {
   grid-column: 3 / span 5;
   grid-row: 1 / span 3;
-  margin: 25px;
 }
 /*-------- Footer --------*/
 footer {
@@ -160,6 +155,7 @@ footer {
     grid-template-columns: auto auto auto;
     grid-gap: 10px;
     padding: 10px;
+    margin: 25px;
   }
 
   .grid_container > div {
