@@ -166,7 +166,7 @@ footer {
 }
 
 /*---------- Media Query For large screens only ---------*/
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 740px) {
   #wrapper {
     border: 5px solid #4c96d7;
     border-radius: 15px 15px 15px 15px;
