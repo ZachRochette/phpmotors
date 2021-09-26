@@ -79,9 +79,8 @@ footer {
 }
 
 #delorean_image {
-  max-width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
+  width: 100%;
+  height: auto;
 }
 
 /*---------- Media Query For large screens only ---------*/
