@@ -136,7 +136,7 @@ hr {
 }
 
 .upgrade_box5 {
-  grid-column: 3 / 4;
+  grid-column: 3 / span 4;
   grid-row: 1 / span 2;
 }
 /*-------- Footer --------*/
