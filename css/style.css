@@ -58,7 +58,7 @@ nav li a {
 
 nav li a:hover {
   color: black;
-  background-color: #4c96d7;
+  background-color: red;
   font-family: "Source Code Pro", monospace;
   margin-top: -10px;
   font-size: large;
@@ -81,7 +81,7 @@ footer {
 /*---------- Media Query For large screens only ---------*/
 @media only screen and (min-width: 480px) {
   #wrapper {
-    border: 5px solid red;
+    border: 5px solid #4c96d7;
     border-radius: 15px 15px 15px 15px;
     max-width: 80%;
     margin-left: 10%;
