@@ -90,15 +90,14 @@ hr {
 }
 
 /*----------Upgrades and Reviews-----------  */
-.upgrades {
+.grid_container {
   display: grid;
   grid-auto-columns: 150px;
   grid-gap: 10px;
-  background-color: #2196f3;
   padding: 10px;
 }
 
-.upgrades > div {
+.grid_container > div {
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
