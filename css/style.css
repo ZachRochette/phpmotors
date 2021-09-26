@@ -155,9 +155,8 @@ footer {
 
   .grid_container {
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 10px;
-    padding: 10px;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 100px;
     margin: 25px;
   }
 
