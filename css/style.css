@@ -114,11 +114,13 @@ hr {
 }
 
 .upgrade_box1 {
+  grid-column: 1;
   text-align: center;
   line-height: 80%;
 }
 
 .upgrade_box2 {
+  grid-column: 2;
   text-align: center;
   line-height: 80%;
 }
@@ -134,7 +136,7 @@ hr {
 }
 
 .upgrade_box5 {
-  grid-column: 1 / span 2;
+  grid-column: 1;
 }
 /*-------- Footer --------*/
 footer {
