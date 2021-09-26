@@ -104,6 +104,7 @@ hr {
 .upgrade_box {
   max-width: 150px;
   text-align: center;
+  line-height: 80%;
 }
 
 /*-------- Footer --------*/
