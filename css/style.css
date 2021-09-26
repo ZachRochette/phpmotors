@@ -142,6 +142,13 @@ hr {
   line-height: 80%;
   grid-area: 2 / 2 / 3 / 3;
 }
+
+.upgrade_box5 {
+  max-width: 150px;
+  text-align: center;
+  line-height: 80%;
+  grid-area: 2 / 2 / 3 / 3;
+}
 /*-------- Footer --------*/
 footer {
   text-align: center;
