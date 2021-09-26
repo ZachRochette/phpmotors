@@ -7,54 +7,6 @@ font-family: 'Source Code Pro', monospace;*/
 }
 
 /*----- Fonts/Headings ----*/
-p {
-  font-family: "Source Code Pro", monospace;
-}
-
-h1 {
-  font-family: "Gemunu Libre", sans-serif;
-  padding-top: 50px;
-}
-h2,
-h3,
-h4 {
-  font-family: "Gemunu Libre", sans-serif;
-}
-
-a {
-  font-family: "Gemunu Libre", sans-serif;
-}
-
-#acc {
-  font-family: "Source Code Pro", monospace;
-  text-decoration: none;
-  color: #3a3a3a;
-  float: right;
-  padding-top: 25px;
-  padding-right: 25px;
-}
-/*-------- Nav -------*/
-nav {
-  width: 100%;
-  float: left;
-  padding: 0;
-  background-color: #3a3a3a;
-}
-nav ul {
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-}
-nav li {
-  float: left;
-}
-nav li a {
-  display: block;
-  padding: 20px 15px;
-  text-decoration: none;
-  font-weight: bold;
-  color: #ffffff;
-}
 
 nav li a:hover {
   color: black;
