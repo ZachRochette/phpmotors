@@ -90,19 +90,17 @@ hr {
 
 /*----------Upgrades-----------  */
 .upgrade_img {
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  background-color: #4c96d7;
-  border: 1px solid black;
-  margin: 1em;
+  width: 100px;
+  height: 100px;
+  background-color: grey;
 }
 
 .upgrade_links {
   vertical-align: top;
   display: inline-block;
+  /* To horizontally center images and caption */
   text-align: center;
+  /* The width of the container also implies margin around the images. */
   width: 120px;
 }
 /*-------- Footer --------*/
