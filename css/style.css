@@ -92,4 +92,8 @@ footer {
   body {
     background-image: url("/phpmotors/images/site/small_check.jpg");
   }
+
+  #delorean_image {
+    width: 100%;
+  }
 }
