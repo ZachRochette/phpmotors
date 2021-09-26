@@ -27,8 +27,8 @@
             <input class="button" alt="Own Today Button" type="image" src="/phpmotors/images/site/own_today.png" />
             <img id="delorean_image" src="/phpmotors/images/delorean.jpg" alt="Delorean image">
             <div class="grid_container">
+                <h2 id="upgrades">Delorean Upgrades</h2>
                 <div class="upgrade_box1">
-                    <h2 id="upgrades">Delorean Upgrades</h2>
                     <img class="upgrade_img" src="/phpmotors/images/upgrades/flux-cap.png" alt="Flux Capacitor image">
                     <a class="upgrade_links" href="#" title="Flux Capacitor">Flux Capacitor</a>
                 </div>
