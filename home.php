@@ -44,14 +44,16 @@
                     <img class="upgrade_img" src="/phpmotors/images/upgrades/hub-cap.jpg" alt="Hub Caps image">
                     <a class="upgrade_links" href="#" title="Hub Caps">Hub Caps</a>
                 </div>
-                <h2 id="reviews">DMC Delorean Reviews</h2>
-                <ul>
-                    <li>"So fast its almost like traveling in time." (4/5)</li>
-                    <li>"Coolest ride on the road." (4/5)</li>
-                    <li>"I'm feeling Marty McFly!" (5/5)</li>
-                    <li>"The most futuristic ride of our day." (4.5/5)</li>
-                    <li>"80;s livin and I love it!" (5/5)</li>
-                </ul>
+                <div class="upgrade_box5">
+                    <h2 id="reviews">DMC Delorean Reviews</h2>
+                    <ul>
+                        <li>"So fast its almost like traveling in time." (4/5)</li>
+                        <li>"Coolest ride on the road." (4/5)</li>
+                        <li>"I'm feeling Marty McFly!" (5/5)</li>
+                        <li>"The most futuristic ride of our day." (4.5/5)</li>
+                        <li>"80;s livin and I love it!" (5/5)</li>
+                    </ul>
+                </div>
             </div>
         </main>
         <hr>
