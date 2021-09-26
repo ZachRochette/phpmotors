@@ -90,8 +90,8 @@ hr {
 
 /*----------Upgrades-----------  */
 .upgrade_img {
-  padding-left: 45px;
-  padding-right: 45px;
+  padding-left: 10%;
+  padding-right: 10%;
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: #4c96d7;
