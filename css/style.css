@@ -100,7 +100,10 @@ hr {
 }
 
 .upgrade_links {
-  margin-right: 3em;
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 120px;
 }
 /*-------- Footer --------*/
 footer {
