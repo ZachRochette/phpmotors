@@ -29,13 +29,13 @@
             <h2 id="upgrades">Delorean Upgrades</h2>
             <div class="upgrades">
                 <img class="upgrade_img" src="/phpmotors/images/upgrades/flux-cap.png" alt="Flux Capacitor image">
-                <a href="#" title="Flux Capacitor">Flux Capacitor</a>
+                <a class="upgrade_links" href="#" title="Flux Capacitor">Flux Capacitor</a>
                 <img class="upgrade_img" src="/phpmotors/images/upgrades/flame.jpg" alt="Flame Decals image">
-                <a href="#" title="Flame Decals">Flame Decals</a>
+                <a class="upgrade_links" href="#" title="Flame Decals">Flame Decals</a>
                 <img class="upgrade_img" src="/phpmotors/images/upgrades/bumper_sticker.jpg" alt="Bumper Stickers image">
-                <a href="#" title="Bumper Stickers">Bumper Stickers</a>
+                <a class="upgrade_links" href="#" title="Bumper Stickers">Bumper Stickers</a>
                 <img class="upgrade_img" src="/phpmotors/images/upgrades/hub-cap.jpg" alt="Hub Caps image">
-                <a href="#" title="Hub Caps">Hub Caps</a>
+                <a class="upgrade_links" href="#" title="Hub Caps">Hub Caps</a>
             </div>
             <h2 id="reviews">DMC Delorean Reviews</h2>
             <div>
