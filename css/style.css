@@ -105,12 +105,29 @@ hr {
   margin: 1em;
 }
 
-.upgrade_box {
+.upgrade_box1 {
   max-width: 150px;
   text-align: center;
   line-height: 80%;
 }
 
+.upgrade_box2 {
+  max-width: 150px;
+  text-align: center;
+  line-height: 80%;
+}
+
+.upgrade_box3 {
+  max-width: 150px;
+  text-align: center;
+  line-height: 80%;
+}
+
+.upgrade_box4 {
+  max-width: 150px;
+  text-align: center;
+  line-height: 80%;
+}
 /*-------- Footer --------*/
 footer {
   text-align: center;

@@ -28,19 +28,19 @@
             <img id="delorean_image" src="/phpmotors/images/delorean.jpg" alt="Delorean image">
             <div class="upgrades">
                 <h2 id="upgrades">Delorean Upgrades</h2>
-                <div class="upgrade_box">
+                <div class="upgrade_box1">
                     <img class="upgrade_img" src="/phpmotors/images/upgrades/flux-cap.png" alt="Flux Capacitor image">
                     <a class="upgrade_links" href="#" title="Flux Capacitor">Flux Capacitor</a>
                 </div>
-                <div class="upgrade_box">
+                <div class="upgrade_box2">
                     <img class="upgrade_img" src="/phpmotors/images/upgrades/flame.jpg" alt="Flame Decals image">
                     <a class="upgrade_links" href="#" title="Flame Decals">Flame Decals</a>
                 </div>
-                <div class="upgrade_box">
+                <div class="upgrade_box3">
                     <img class="upgrade_img" src="/phpmotors/images/upgrades/bumper_sticker.jpg" alt="Bumper Stickers image">
                     <a class="upgrade_links" href="#" title="Bumper Stickers">Bumper Stickers</a>
                 </div>
-                <div class="upgrade_box">
+                <div class="upgrade_box4">
                     <img class="upgrade_img" src="/phpmotors/images/upgrades/hub-cap.jpg" alt="Hub Caps image">
                     <a class="upgrade_links" href="#" title="Hub Caps">Hub Caps</a>
                 </div>
