@@ -18,10 +18,12 @@
         </nav>
         <main>
             <h1>Welcome to PHP Motors!</h1>
-            <p>DMC Delorean</p>
-            <p>3 Cup holders</p>
-            <p>Superman doors</p>
-            <p>Fuzzy dice!</p>
+            <div id="delorean_info">
+                <p>DMC Delorean</p>
+                <p>3 Cup holders</p>
+                <p>Superman doors</p>
+                <p>Fuzzy dice!</p>
+            </div>
             <input class="button" alt="Own Today Button" type="image" src="/phpmotors/images/site/own_today.png" />
             <img id="delorean_image" src="/phpmotors/images/delorean.jpg" alt="Delorean image">
             <h2 id="upgrades">Delorean Upgrades</h2>

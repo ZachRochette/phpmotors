@@ -64,6 +64,10 @@ nav li a:hover {
   font-size: large;
 }
 
+#delorean_info {
+  color: #4c96d7;
+}
+
 /*------- Main section -------*/
 #wrapper {
   background-color: #fff;
