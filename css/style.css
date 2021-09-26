@@ -90,16 +90,6 @@ hr {
 }
 
 /*----------Upgrades and Reviews-----------  */
-.grid_container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 10px;
-  padding: 10px;
-}
-
-.grid_container > div {
-  margin: 10%;
-}
 
 .upgrade_img {
   padding-left: 50%;
@@ -160,5 +150,16 @@ footer {
   /*------ Background Image ------*/
   body {
     background-image: url("/phpmotors/images/site/small_check.jpg");
+  }
+
+  .grid_container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+  }
+
+  .grid_container > div {
+    margin: 10%;
   }
 }
