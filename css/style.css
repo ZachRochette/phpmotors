@@ -68,7 +68,7 @@ nav li a:hover {
 #delorean_info {
   color: #4c96d7;
   font-weight: bold;
-  padding-left: 5em;
+  padding-left: 3em;
 }
 
 #delorean_image {
@@ -76,7 +76,7 @@ nav li a:hover {
 }
 
 .button {
-  padding-left: 5em;
+  padding-left: 3em;
 }
 /*------- Main section -------*/
 #wrapper {
