@@ -78,11 +78,9 @@ footer {
   text-align: center;
 }
 
-#delorean_image {
-  width: 60%;
-  height: auto;
+img {
+  max-width: 80%;
 }
-
 /*---------- Media Query For large screens only ---------*/
 @media only screen and (min-width: 480px) {
   #wrapper {
