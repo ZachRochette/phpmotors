@@ -90,7 +90,17 @@ hr {
 }
 
 /*----------Upgrades and Reviews-----------  */
+.grid_container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+  margin: 25px;
+}
 
+.grid_container > div {
+  margin: 10%;
+}
 .upgrade_img {
   padding-left: 50%;
   padding-right: 50%;
@@ -99,6 +109,28 @@ hr {
   background-color: #4c96d7;
   border: 1px solid black;
   margin: 1em;
+}
+
+.upgrade_box1 {
+  grid-column: 1;
+  text-align: center;
+  line-height: 80%;
+}
+
+.upgrade_box2 {
+  grid-column: 2;
+  text-align: center;
+  line-height: 80%;
+}
+
+.upgrade_box3 {
+  text-align: center;
+  line-height: 80%;
+}
+
+.upgrade_box4 {
+  text-align: center;
+  line-height: 80%;
 }
 
 /*-------- Footer --------*/
