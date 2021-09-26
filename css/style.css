@@ -97,6 +97,10 @@ hr {
   padding: 10px;
 }
 
+.grid_container > div {
+  padding: 20px 0;
+}
+
 .upgrade_img {
   padding-left: 50%;
   padding-right: 50%;
