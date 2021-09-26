@@ -90,14 +90,16 @@ hr {
 }
 
 /*----------Upgrades and Reviews-----------  */
-.grid_container {
+.grid-container {
   display: grid;
-  grid-auto-columns: 150px;
+  grid-template-columns: auto auto auto auto;
   grid-gap: 10px;
+  background-color: #2196f3;
   padding: 10px;
 }
 
-.grid_container > div {
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
