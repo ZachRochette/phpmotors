@@ -58,7 +58,7 @@ nav li a {
 
 nav li a:hover {
   color: black;
-  background-color: #4c96d7;
+  background-color: red;
   font-family: "Source Code Pro", monospace;
   margin-top: -10px;
   font-size: large;
