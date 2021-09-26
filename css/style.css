@@ -185,6 +185,13 @@ footer {
     line-height: 80%;
   }
 
+  #reviews {
+    grid-column: 3;
+    grid-row: 1;
+    text-align: center;
+    line-height: 80%;
+  }
+
   .upgrade_box1 {
     grid-column: 1;
     grid-row: 2;
