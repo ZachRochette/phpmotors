@@ -111,7 +111,7 @@ hr {
   margin: 1em;
 }
 
-.upgrades {
+#upgrades {
   grid-column: 1;
   grid-row: 2;
   text-align: center;
