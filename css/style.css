@@ -58,7 +58,7 @@ nav li a {
 
 nav li a:hover {
   color: black;
-  background-color: red;
+  background-color: #4c96d7;
   font-family: "Source Code Pro", monospace;
   margin-top: -10px;
   font-size: large;
@@ -71,6 +71,8 @@ nav li a:hover {
 /*------- Main section -------*/
 #wrapper {
   background-color: #fff;
+  font-weight: bold;
+  margin-left: 10em;
 }
 
 hr {
