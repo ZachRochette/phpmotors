@@ -131,6 +131,7 @@ hr {
   grid-row: 4;
   text-align: center;
   line-height: 80%;
+  margin-right: 10%;
 }
 
 .upgrade_box2 {
@@ -138,18 +139,21 @@ hr {
   grid-row: 4;
   text-align: center;
   line-height: 80%;
+  margin-right: 10%;
 }
 
 .upgrade_box3 {
   text-align: center;
   grid-row: 5;
   line-height: 80%;
+  margin-right: 10%;
 }
 
 .upgrade_box4 {
   text-align: center;
   grid-row: 5;
   line-height: 80%;
+  margin-right: 10%;
 }
 
 .upgrade_box5 {
