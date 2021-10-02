@@ -16,7 +16,7 @@ function phpmotorsConnect()
             echo 'It worked!';
         }
     } catch (PDOException $e) {
-        echo "it didn't work, error: " . $e->getMessage();
+        echo "dit it though't work, error: " . $e->getMessage();
     }
 }
 phpmotorsConnect();
