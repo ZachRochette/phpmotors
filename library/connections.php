@@ -20,7 +20,8 @@ function phpmotorsConnect()
             echo "it worked!";
         }
     } catch (PDOException $e) {
-        echo "it didn't work: " . $e->getMessage();
+        header('Location: /phpmotors/view/500.php');
+        exit;
     }
 }
 phpmotorsConnect();
