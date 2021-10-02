@@ -4,7 +4,7 @@ Proxy connection to the phpmotors databse
 */
 function phpmotorsConnect()
 {
-    $server = 'localhost';
+    $server = 'mysql';
     $dbname = 'phpmotors';
     $username = 'iClient';
     $password = 'YuK6Ihq6b)/@C0.o';
@@ -16,7 +16,7 @@ function phpmotorsConnect()
             echo 'It worked!';
         }
     } catch (PDOException $e) {
-        echo "dit it though't work, error: " . $e->getMessage();
+        echo "why won't you work, error: " . $e->getMessage();
     }
 }
 phpmotorsConnect();
