@@ -17,6 +17,9 @@ foreach ($classifications as $classification) {
 }
 $navList .= '</ul>';
 
+echo $navList;
+exit;
+
 $action = filter_input(INPUT_GET, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_POST, 'action');
