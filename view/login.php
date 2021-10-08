@@ -14,14 +14,14 @@
             <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
         </header>
         <nav>
-            <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php';
+            <?php //require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php';
             echo $navList; ?>
         </nav>
         <main>
             <form class="login">
                 <h2>Log In</h2>
-                <input type="text" placeholder="Username">
-                <input type="password" placeholder="Password">
+                <input name="clientEmail" id="clientEmail" type="text" placeholder="Username">
+                <input name="clientPassword" id="clientPassword" type="password" placeholder="Password">
                 <button>Login</button>
                 <p>Not a member yet?</p>
                 <a href="../view/register.php">Register Now</a>
