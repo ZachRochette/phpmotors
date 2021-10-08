@@ -20,10 +20,10 @@
         <main>
             <form class="register">
                 <h2>Log In</h2>
-                <input name="clientFirstname" id="clientFirstname" type="text" placeholder="First Name" require>
-                <input name="clientLastname" id="clientLastname" type="text" placeholder="Last Name" require>
-                <input name="clientEmail" id="clientEmail" type="text" placeholder="Email Address" require>
-                <input name="clientPassword" id="clientPassword" type="password" placeholder="Password" require>
+                <input name="clientFirstname" id="clientFirstname" type="text" placeholder="First Name" required>
+                <input name="clientLastname" id="clientLastname" type="text" placeholder="Last Name" required>
+                <input name="clientEmail" id="clientEmail" type="text" placeholder="Email Address" required>
+                <input name="clientPassword" id="clientPassword" type="password" placeholder="Password" required>
                 <button>Create Account</button>
             </form>
         </main>
