@@ -305,6 +305,83 @@ footer {
   background-color: #3a3a3a;
 }
 
+/* register form */
+.register {
+  overflow: hidden;
+  background-color: white;
+  padding: 40px 30px 30px 30px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 5px 10px 10px rgba(12, 18, 19, 0.575);
+  -webkit-transform: translate(100%, 0%);
+  -moz-transform: translate(100%, 0%);
+  -ms-transform: translate(100%, 0%);
+  -o-transform: translate(100%, 0%);
+  transform: translate(100%, 0%);
+}
+
+.register::before,
+.register::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-top-left-radius: 40%;
+  border-top-right-radius: 45%;
+  border-bottom-left-radius: 35%;
+  border-bottom-right-radius: 40%;
+  z-index: -1;
+}
+.register::before {
+  left: 40%;
+  bottom: -130%;
+  background-color: rgba(49, 113, 182, 0.15);
+  -webkit-animation: wawes 6s infinite linear;
+  -moz-animation: wawes 6s infinite linear;
+  animation: wawes 6s infinite linear;
+}
+.register::after {
+  left: 35%;
+  bottom: -125%;
+  background-color: rgba(2, 128, 144, 0.2);
+  -webkit-animation: wawes 7s infinite;
+  -moz-animation: wawes 7s infinite;
+  animation: wawes 7s infinite;
+}
+.register > input {
+  font-family: "Source Code Pro", monospace;
+  display: block;
+  border-radius: 5px;
+  font-size: 16px;
+  background: white;
+  width: 100%;
+  border: solid black 1px;
+  padding: 10px 10px;
+  margin: 15px -10px;
+}
+.register > button {
+  font-family: "Source Code Pro", monospace;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 80px;
+  border: 0;
+  padding: 10px 0;
+  margin-top: 10px;
+  margin-left: -5px;
+  border-radius: 5px;
+  background-color: #4c96d7;
+  -webkit-transition: background-color 300ms;
+  -moz-transition: background-color 300ms;
+  transition: background-color 300ms;
+}
+.register > button:hover {
+  background-color: #3a3a3a;
+}
+
+/* Animation */
 @-webkit-keyframes wawes {
   from {
     -webkit-transform: rotate(0);
@@ -336,12 +413,4 @@ footer {
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-}
-a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.6);
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  font-size: 12px;
 }
