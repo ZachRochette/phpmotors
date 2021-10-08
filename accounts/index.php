@@ -28,6 +28,7 @@ switch ($action) {
         break;
     default:
         include 'view/home.php';
+        break;
 }
 
 // $clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
