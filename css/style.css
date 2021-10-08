@@ -6,6 +6,7 @@ font-family: 'Source Code Pro', monospace;*/
 .login {
   background-color: #4c96d7;
   font-size: large;
+  color: red;
 }
 /*--- Logo ---*/
 #logo {
