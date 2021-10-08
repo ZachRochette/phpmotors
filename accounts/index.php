@@ -30,17 +30,3 @@ switch ($action) {
         include '../view/login.php';
         break;
 }
-
-$register = filter_input(INPUT_GET, 'register');
-if ($register == NULL) {
-    $register = filter_input(INPUT_POST, 'register');
-}
-
-switch ($register) {
-    case 'register':
-        include 'view/register.php';
-        break;
-    default:
-        include 'view/home.php';
-        break;
-}
