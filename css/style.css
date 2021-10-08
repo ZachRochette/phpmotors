@@ -400,7 +400,7 @@ footer {
   transition: background-color 300ms;
 }
 
-.register_btn:hover {
+.register_btn > a:hover {
   background-color: #3a3a3a;
 }
 
