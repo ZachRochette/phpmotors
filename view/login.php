@@ -18,13 +18,15 @@
             echo $navList; ?>
         </nav>
         <main>
-            <form class="login" action="/login-page.php">
-                <label for="fname">First name:</label><br>
-                <input type="text" id="fname" name="fname" value=""><br>
-                <label for="lname">Last name:</label><br>
-                <input type="text" id="lname" name="lname" value=""><br><br>
-                <input type="submit" value="Login">
-            </form>
+            <div class="login">
+                <form action="/login-page.php">
+                    <label for="fname">First name:</label><br>
+                    <input type="text" id="fname" name="fname" value=""><br>
+                    <label for="lname">Last name:</label><br>
+                    <input type="text" id="lname" name="lname" value=""><br><br>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
         </main>
         <hr>
         <footer>
