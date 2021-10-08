@@ -229,7 +229,8 @@ footer {
   }
 }
 
-/* Login Form */
+/* Login Small screen*/
+
 .login {
   overflow: hidden;
   background-color: white;
@@ -238,41 +239,8 @@ footer {
   border-radius: 10px;
   width: 400px;
   box-shadow: 5px 10px 10px rgba(12, 18, 19, 0.575);
-  -webkit-transform: translate(100%, 0%);
-  -moz-transform: translate(100%, 0%);
-  -ms-transform: translate(100%, 0%);
-  -o-transform: translate(100%, 0%);
-  transform: translate(100%, 0%);
 }
 
-.login::before,
-.login::after {
-  content: "";
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  border-top-left-radius: 40%;
-  border-top-right-radius: 45%;
-  border-bottom-left-radius: 35%;
-  border-bottom-right-radius: 40%;
-  z-index: -1;
-}
-.login::before {
-  left: 40%;
-  bottom: -130%;
-  background-color: rgba(49, 113, 182, 0.15);
-  -webkit-animation: wawes 6s infinite linear;
-  -moz-animation: wawes 6s infinite linear;
-  animation: wawes 6s infinite linear;
-}
-.login::after {
-  left: 35%;
-  bottom: -125%;
-  background-color: rgba(2, 128, 144, 0.2);
-  -webkit-animation: wawes 7s infinite;
-  -moz-animation: wawes 7s infinite;
-  animation: wawes 7s infinite;
-}
 .login > input {
   font-family: "Source Code Pro", monospace;
   display: block;
@@ -284,6 +252,7 @@ footer {
   padding: 10px 10px;
   margin: 15px -10px;
 }
+
 .login > button {
   font-family: "Source Code Pro", monospace;
   cursor: pointer;
@@ -296,7 +265,7 @@ footer {
   margin-top: 10px;
   margin-left: -5px;
   border-radius: 5px;
-  background-color: #3a3a3a;
+  background-color: #3f3f3f;
   -webkit-transition: background-color 300ms;
   -moz-transition: background-color 300ms;
   transition: background-color 300ms;
@@ -305,7 +274,6 @@ footer {
   background-color: #3a3a3a;
 }
 
-/* register form */
 .register {
   overflow: hidden;
   background-color: white;
@@ -314,41 +282,8 @@ footer {
   border-radius: 10px;
   width: 400px;
   box-shadow: 5px 10px 10px rgba(12, 18, 19, 0.575);
-  -webkit-transform: translate(100%, 0%);
-  -moz-transform: translate(100%, 0%);
-  -ms-transform: translate(100%, 0%);
-  -o-transform: translate(100%, 0%);
-  transform: translate(100%, 0%);
 }
 
-.register::before,
-.register::after {
-  content: "";
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  border-top-left-radius: 40%;
-  border-top-right-radius: 45%;
-  border-bottom-left-radius: 35%;
-  border-bottom-right-radius: 40%;
-  z-index: -1;
-}
-.register::before {
-  left: 40%;
-  bottom: -130%;
-  background-color: rgba(49, 113, 182, 0.15);
-  -webkit-animation: wawes 6s infinite linear;
-  -moz-animation: wawes 6s infinite linear;
-  animation: wawes 6s infinite linear;
-}
-.register::after {
-  left: 35%;
-  bottom: -125%;
-  background-color: rgba(2, 128, 144, 0.2);
-  -webkit-animation: wawes 7s infinite;
-  -moz-animation: wawes 7s infinite;
-  animation: wawes 7s infinite;
-}
 .register > input {
   font-family: "Source Code Pro", monospace;
   display: block;
@@ -360,6 +295,7 @@ footer {
   padding: 10px 10px;
   margin: 15px -10px;
 }
+
 .register > button {
   font-family: "Source Code Pro", monospace;
   cursor: pointer;
@@ -403,37 +339,115 @@ footer {
 .register_btn > a:hover {
   background-color: #3a3a3a;
 }
+/* Login Form */
+@media only screen and (min-width: 1200px) {
+  .login {
+    -webkit-transform: translate(100%, 0%);
+    -moz-transform: translate(100%, 0%);
+    -ms-transform: translate(100%, 0%);
+    -o-transform: translate(100%, 0%);
+    transform: translate(100%, 0%);
+  }
 
-/* Animation */
-@-webkit-keyframes wawes {
-  from {
-    -webkit-transform: rotate(0);
+  .login::before,
+  .login::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 45%;
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 40%;
+    z-index: -1;
   }
-  to {
-    -webkit-transform: rotate(360deg);
+  .login::before {
+    left: 40%;
+    bottom: -90%;
+    background-color: rgba(49, 113, 182, 0.15);
+    -webkit-animation: wawes 6s infinite linear;
+    -moz-animation: wawes 6s infinite linear;
+    animation: wawes 6s infinite linear;
   }
-}
-@-moz-keyframes wawes {
-  from {
-    -moz-transform: rotate(0);
+  .login::after {
+    left: 35%;
+    bottom: -105%;
+    background-color: rgba(2, 128, 144, 0.2);
+    -webkit-animation: wawes 7s infinite;
+    -moz-animation: wawes 7s infinite;
+    animation: wawes 7s infinite;
   }
-  to {
-    -moz-transform: rotate(360deg);
+
+  /* register form */
+  .register {
+    box-shadow: 5px 10px 10px rgba(12, 18, 19, 0.575);
+    -webkit-transform: translate(100%, 0%);
+    -moz-transform: translate(100%, 0%);
+    -ms-transform: translate(100%, 0%);
+    -o-transform: translate(100%, 0%);
+    transform: translate(100%, 0%);
   }
-}
-@keyframes wawes {
-  from {
-    -webkit-transform: rotate(0);
-    -moz-transform: rotate(0);
-    -ms-transform: rotate(0);
-    -o-transform: rotate(0);
-    transform: rotate(0);
+
+  .register::before,
+  .register::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 45%;
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 40%;
+    z-index: -1;
   }
-  to {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
+  .register::before {
+    left: 40%;
+    bottom: -80%;
+    background-color: rgba(49, 113, 182, 0.15);
+    -webkit-animation: wawes 6s infinite linear;
+    -moz-animation: wawes 6s infinite linear;
+    animation: wawes 6s infinite linear;
+  }
+  .register::after {
+    left: 35%;
+    bottom: -90%;
+    background-color: rgba(2, 128, 144, 0.2);
+    -webkit-animation: wawes 7s infinite;
+    -moz-animation: wawes 7s infinite;
+    animation: wawes 7s infinite;
+  }
+
+  /* Animation */
+  @-webkit-keyframes wawes {
+    from {
+      -webkit-transform: rotate(0);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @-moz-keyframes wawes {
+    from {
+      -moz-transform: rotate(0);
+    }
+    to {
+      -moz-transform: rotate(360deg);
+    }
+  }
+  @keyframes wawes {
+    from {
+      -webkit-transform: rotate(0);
+      -moz-transform: rotate(0);
+      -ms-transform: rotate(0);
+      -o-transform: rotate(0);
+      transform: rotate(0);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
   }
 }
