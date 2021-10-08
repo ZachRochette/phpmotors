@@ -2,6 +2,10 @@
 /*font-family: 'Gemunu Libre', sans-serif;
 font-family: 'Source Code Pro', monospace;*/
 
+/* Login Form */
+.login {
+  background-color: #4c96d7;
+}
 /*--- Logo ---*/
 #logo {
   padding-bottom: 25px;
@@ -227,8 +231,4 @@ footer {
   .button {
     padding-left: 3em;
   }
-}
-
-form {
-  border: solid black 10px;
 }
