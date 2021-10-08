@@ -30,11 +30,7 @@ switch ($action) {
         include 'view/home.php';
 }
 
-$clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
-if ($clientFirstname == NULL) {
-    $clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
-}
-
-switch ($clientFirstname) {
-    case ''
-}
+// $clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
+// if ($clientFirstname == NULL) {
+//     $clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
+// }
