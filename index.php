@@ -27,6 +27,6 @@ switch ($action) {
         include 'view/template.php';
         break;
     default:
-        include '../view/home.php';
+        include 'view/home.php';
         break;
 }

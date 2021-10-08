@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Register PHP Motors</title>
+    <title>Login PHP Motors</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/phpmotors/css/style.css" type="text/css" rel="stylesheet" media="screen">
 </head>
@@ -14,7 +14,7 @@
             <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
         </header>
         <nav>
-            <?php //require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php'; 
+            <?php //require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php';
             echo $navList; ?>
         </nav>
         <main>

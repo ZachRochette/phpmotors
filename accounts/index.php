@@ -27,15 +27,20 @@ switch ($action) {
         include '../view/login.php';
         break;
     default:
-        include '../view/home.php';
+        include '../view/login.php';
         break;
 }
 
-switch ($action) {
+$register = filter_input(INPUT_GET, 'register');
+if ($register == NULL) {
+    $register = filter_input(INPUT_POST, 'register');
+}
+
+switch ($register) {
     case 'register':
-        include '../view/register.php';
+        include 'view/register.php';
         break;
     default:
-        include '../view/home.php';
+        include 'view/home.php';
         break;
 }
