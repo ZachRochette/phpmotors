@@ -381,6 +381,29 @@ footer {
   background-color: #3a3a3a;
 }
 
+.register_btn {
+  font-family: "Source Code Pro", monospace;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 80px;
+  border: 0;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: -5px;
+  border-radius: 5px;
+  background-color: #4c96d7;
+  -webkit-transition: background-color 300ms;
+  -moz-transition: background-color 300ms;
+  transition: background-color 300ms;
+}
+
+.register_btn:hover {
+  background-color: #3a3a3a;
+}
+
 /* Animation */
 @-webkit-keyframes wawes {
   from {
