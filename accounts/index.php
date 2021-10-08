@@ -27,7 +27,7 @@ switch ($action) {
         include '../view/login.php';
         break;
     default:
-        include 'view/home.php';
+        include '../view/home.php';
         break;
 }
 
