@@ -20,8 +20,8 @@
         <main>
             <form class="login">
                 <h2>Log In</h2>
-                <input name="clientEmail" id="clientEmail" type="text" placeholder="Username">
-                <input name="clientPassword" id="clientPassword" type="password" placeholder="Password">
+                <input name="clientEmail" id="clientEmail" type="text" placeholder="Username" required>
+                <input name="clientPassword" id="clientPassword" type="password" placeholder="Password" required>
                 <button>Login</button>
                 <p>Not a member yet?</p>
                 <a href="../view/register.php">Register Now</a>
