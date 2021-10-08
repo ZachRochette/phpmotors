@@ -23,8 +23,9 @@ if ($action == NULL) {
 }
 
 switch ($action) {
-    case '':
-
+    case 'login':
+        include 'view/login.php';
         break;
     default:
+        include 'view/home.php';
 }

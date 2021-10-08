@@ -14,7 +14,7 @@
             <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
         </header>
         <nav>
-            <?php //require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php'; 
+            <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php';
             echo $navList; ?>
         </nav>
         <main>
@@ -23,6 +23,8 @@
                 <input type="text" placeholder="Username">
                 <input type="password" placeholder="Password">
                 <button>Login</button>
+                <p>Not a member yet?</p>
+                <a href="../view/register.php">Register Now</a>
             </form>
         </main>
         <hr>
