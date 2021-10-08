@@ -29,6 +29,9 @@ switch ($action) {
     case 'register':
         include '../view/register.php';
         break;
+    case 'home':
+        include '../view/home.php';
+        break;
     default:
         echo 'something went wrong';
         break;
