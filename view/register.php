@@ -20,13 +20,13 @@
         <main>
             <form class="register">
                 <h2>Log In</h2>
-                <label id="input" for="clientFirstname">First Name:</label>
+                <label id="a" for="clientFirstname">First Name:</label>
                 <input name="clientFirstname" id="clientFirstname" type="text" placeholder="First Name" required>
-                <label id="input" for="clientLastname">Last Name:</label>
+                <label id="b" for="clientLastname">Last Name:</label>
                 <input name="clientLastname" id="clientLastname" type="text" placeholder="Last Name" required>
-                <label id="input" for="clientEmail">Email:</label>
+                <label id="c" for="clientEmail">Email:</label>
                 <input name="clientEmail" id="clientEmail" type="text" placeholder="Email Address" required>
-                <label id="input" for="clientPassword">Password:</label>
+                <label id="d" for="clientPassword">Password:</label>
                 <input name="clientPassword" id="clientPassword" type="password" placeholder="Password" required>
                 <button>Create Account</button>
             </form>

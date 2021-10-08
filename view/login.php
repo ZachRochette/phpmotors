@@ -20,9 +20,9 @@
         <main>
             <form class="login">
                 <h2>Log In</h2>
-                <label id="input" for="clientEmail">Email:</label>
+                <label id="a" for="clientEmail">Email:</label>
                 <input name="clientEmail" id="clientEmail" type="text" placeholder="Username" required>
-                <label id="input" for="clientPassword">Password:</label>
+                <label id="b" for="clientPassword">Password:</label>
                 <input name="clientPassword" id="clientPassword" type="password" placeholder="Password" required>
                 <button>Login</button>
                 <p>Not a member yet?</p>
