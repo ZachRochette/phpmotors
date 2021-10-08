@@ -1,4 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre&family=Source+Code+Pro&display=swap");
+/*font-family: 'Gemunu Libre', sans-serif;
+font-family: 'Source Code Pro', monospace;*/
 
+/*--- Logo ---*/
+#logo {
+  padding-bottom: 25px;
+}
+
+/*----- Fonts/Headings ----*/
+p {
+  font-family: "Source Code Pro", monospace;
+}
+
+h1 {
+  font-family: "Gemunu Libre", sans-serif;
+  padding-top: 50px;
+}
+h2,
+h3,
+h4 {
+  font-family: "Gemunu Libre", sans-serif;
+}
+
+a {
+  font-family: "Gemunu Libre", sans-serif;
+}
+
+#acc {
+  font-family: "Source Code Pro", monospace;
+  text-decoration: none;
+  color: #3a3a3a;
+  float: right;
+  padding-top: 25px;
+  padding-right: 25px;
+}
+/*-------- Nav -------*/
+nav {
+  width: 100%;
   float: left;
   padding: 0;
   background-color: #3a3a3a;
