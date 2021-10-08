@@ -24,7 +24,7 @@
                 <input name="clientPassword" id="clientPassword" type="password" placeholder="Password" required>
                 <button>Login</button>
                 <p>Not a member yet?</p>
-                <a class="register_btn" href="/phpmotors/accounts?action=register">Register Now</a>
+                <a class="register_btn" href="/phpmotors/accounts?action=register">Create Account</a>
             </form>
         </main>
         <hr>
