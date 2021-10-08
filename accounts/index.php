@@ -31,7 +31,11 @@ switch ($action) {
         break;
 }
 
-// $clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
-// if ($clientFirstname == NULL) {
-//     $clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
-// }
+switch ($action) {
+    case 'register':
+        include '../view/register.php';
+        break;
+    default:
+        include '../view/home.php';
+        break;
+}
