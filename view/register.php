@@ -18,7 +18,7 @@
             echo $navList; ?>
         </nav>
         <main>
-            <form class="login">
+            <form class="register">
                 <h2>Log In</h2>
                 <input type="text" placeholder="First Name" required>
                 <input type="text" placeholder="Last Name" required>
