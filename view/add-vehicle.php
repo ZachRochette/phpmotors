@@ -43,9 +43,9 @@
                 <input name="invColor" id="invColor" type="text" required>
                 <label for="classificationId">Choose a car:</label>
                 <select name="classificationId" id="classificationId">
+                    <option value="1">SUV</option>
                     <option value="2">Classic</option>
                     <option value="3">Sports</option>
-                    <option value="1">SUV</option>
                     <option value="4">Trucks</option>
                     <option value="5">Used</option>
                 </select>
