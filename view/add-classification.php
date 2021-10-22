@@ -25,8 +25,8 @@
             ?>
             <form method="post" action="/phpmotors/vehicles/index.php" class="login">
                 <h2>Car Classification</h2>
-                <label id="a" for="classificationName">Classification Name:</label>
-                <input name="classificationName" id="cName" type="text" placeholder="Car Type" required>
+                <label for="classificationName">Classification Name:</label>
+                <input name="classificationName" id="classificationName" type="text" placeholder="Car Type" required>
                 <p>Click (ADD CLASSIFICATION) to add your car to the navigation bar.</p>
                 <input type="submit" name="submit" id="regbtn" value="ADD CLASSIFICATION">
                 <input type="hidden" name="action" value="add-classification">
