@@ -24,25 +24,25 @@
             }
             ?>
             <form method="post" action="/phpmotors/vehicles/index.php" class="login">
-                <h2>Add Vehicle:</h2>
-                <label id="a" for="invMake"> Make:</label>
-                <input name="invMake" id="invMake" type="text" required>
-                <label id="w" for="invModel"> Model:</label>
-                <input name="invModel" id="invModel" type="text" required>
-                <label id="h" for="invDescription"> Description:</label>
-                <input name="invDescription" id="invDescription" type="text" required>
-                <label id="f" for="invImage"> Image:</label>
-                <input name="invImage" id="invImage" type="text" required>
-                <label id="g" for="invThumbnail"> Thumbnail:</label>
-                <input name="invThumbnail" id="invThumbnail" type="text" required>
-                <label id="s" for="invPrice"> Price:</label>
-                <input name="invPrice" id="invPrice" type="number" required>
-                <label id="d" for="invStock">Stock:</label>
-                <input name="invStock" id="invStock" type="number" required>
-                <label id="b" for="invColor"> Color:</label>
-                <input name="invColor" id="invColor" type="text" required>
-                <label id="c" for="classificationId"> ID:</label>
-                <input name="classificationId" id="classificationId" type="number" required>
+                <h2>Car Classification</h2>
+                <label for="invMake">Make:</label>
+                <input name="invMake" id="invMake" type="text">
+                <label for="invMake">Model:</label>
+                <input name="invMake" id="invMake" type="text">
+                <label for="invDescription">Description:</label>
+                <input name="invDescription" id="invDescription" type="text">
+                <label for="invImage">Image:</label>
+                <input name="invImage" id="invImage" type="text">
+                <label for="invThumbnail">Thumbnail:</label>
+                <input name="invThumbnail" id="invThumbnail" type="text">
+                <label for="invPrice">Price:</label>
+                <input name="invPrice" id="invPrice" type="number">
+                <label for="invStock">Stock:</label>
+                <input name="invStock" id="invStock" type="number">
+                <label for="invColor">Color:</label>
+                <input name="invColor" id="invColor" type="text">
+                <label for="classificationId">ID:</label>
+                <input name="classificationId" id="classificationId" type="number">
                 <input type="submit" name="submit" id="regbtn" value="Add Vehicle">
                 <input type="hidden" name="action" value="add-vehicle">
                 <a class="register_btn" href="/phpmotors/view/vehicle-man.php">Return to Vehicle Managment</a>
