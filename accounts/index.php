@@ -28,9 +28,6 @@ switch ($action) {
     case 'login':
         include '../view/login.php';
         break;
-        // case 'register':
-        //     include '../view/register.php';
-        //     break;
     case 'register':
         // Filter and store the data
         $clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
@@ -46,7 +43,7 @@ switch ($action) {
 // Check for missing data
 if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($clientPassword)) {
     $message = '<p>Please provide information for all empty form fields.</p>';
-    include '../view/registration.php';
+    include '../view/register.php';
     exit;
 }
 
@@ -60,6 +57,6 @@ if ($regOutcome === 1) {
     exit;
 } else {
     $message = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
-    include '../view/registration.php';
+    include '../view/register.php';
     exit;
 }
