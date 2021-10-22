@@ -26,7 +26,9 @@ if ($action == NULL) {
 
 switch ($action) {
     case 'add-classification':
-
+        //filter and store data
+        $classificationName = filter_input(INPUT_POST, 'classificationName');
+        $classificationId = filter_input(INPUT_POST, 'classificationId');
         // Check for missing data
         if (empty($classificationName) || empty($classificationId)) {
             $message = '<p>Please provide information for all empty form fields.</p>';
@@ -84,10 +86,7 @@ switch ($action) {
         }
 
         break;
-    case 'add-classification':
-        $classificationName = filter_input(INPUT_POST, 'classificationName');
-        $classificationId = filter_input(INPUT_POST, 'classificationId');
-        break;
+
     default:
         include '../view/home.php';
         break;
