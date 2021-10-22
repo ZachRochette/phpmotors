@@ -24,14 +24,11 @@
             }
             ?>
             <form method="post" action="/phpmotors/accounts/index.php" class="login">
-                <h2>Log In</h2>
-                <label id="a" for="clientEmail">Email:</label>
-                <input name="clientEmail" id="clientEmail" type="text" placeholder="Username" required>
-                <label id="b" for="clientPassword">Password:</label>
-                <input name="clientPassword" id="clientPassword" type="password" placeholder="Password" required>
-                <button>Login</button>
-                <p>Not a member yet?</p>
-                <a class="register_btn" href="/phpmotors/accounts?action=register">Create Account</a>
+                <h2>Car Classification</h2>
+                <label id="a" for="classificationId">Classification Name:</label>
+                <input name="classificaitonId" id="classificationId" type="text" placeholder="Sports" required>
+                <p>Click (Apply Now) to add your car to the navigation bar.</p>
+                <a class="register_btn" href="/phpmotors/view/vehicle-man.php">Apply Now</a>
             </form>
         </main>
         <hr>

@@ -31,7 +31,7 @@ switch ($action) {
         $classificationId = filter_input(INPUT_POST, 'classificationId');
         // Check for missing data
         if (empty($classificationName) || empty($classificationId)) {
-            $message = '<p>Please provide information for all empty form fields.</p>';
+            $message = '<p>Please provide a car type.</p>';
             include '../view/add-classification.php';
             exit;
         }

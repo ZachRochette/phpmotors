@@ -17,8 +17,8 @@
             <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php'; ?>
         </nav>
         <main>
-            <li> <a href="view\add-classification.php" title="Add car classification">Car Classification</a></li>
-            <li> <a href="view\add-vehicle.php" title="Add car classification">Car Classification</a></li>
+            <li> <a href="/phpmotors/vehicles?action=add-classification" title="Add car classification">Car Classification</a></li>
+            <li> <a href="/phpmotors/vehicles?action=add-vehicle" title="Add car classification">Car Inventory</a></li>
         </main>
         <hr>
         <footer>
