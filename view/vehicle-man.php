@@ -18,7 +18,6 @@
         </nav>
         <main>
             <a href="/phpmotors/vehicles?action=add-classification" title="Add car classification">Car Classification</a>
-            <br>
             <a href="/phpmotors/vehicles?action=add-vehicle" title="Add car classification">Car Inventory</a>
         </main>
         <hr>
