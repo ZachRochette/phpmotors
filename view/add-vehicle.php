@@ -41,14 +41,8 @@
                 <input name="invStock" id="invStock" type="number" required>
                 <label id="b" for="invColor"> Color:</label>
                 <input name="invColor" id="invColor" type="text" required>
-                <label for="classificationId">Choose a car:</label>
-                <select name="classificationId" id="classificationId">
-                    <option value="1">SUV</option>
-                    <option value="2">Classic</option>
-                    <option value="3">Sports</option>
-                    <option value="4">Trucks</option>
-                    <option value="5">Used</option>
-                </select>
+                <label id="c" for="classificationId"> ID:</label>
+                <input name="classificationId" id="classificationId" type="number" required>
                 <input type="submit" name="submit" id="regbtn" value="Add Vehicle">
                 <input type="hidden" name="action" value="add-vehicle">
                 <a class="register_btn" href="/phpmotors/view/vehicle-man.php">Return to Vehicle Managment</a>
