@@ -28,6 +28,12 @@ switch ($action) {
     case 'home':
         include '../view/home.php';
         break;
+    case 'add-classification':
+        include '../view/add-classification.php';
+        break;
+    case 'add-classification':
+        include '../view/add-vehicle.php';
+        break;
     case 'add-vehicle':
         // Filter and store the data
         $invId = filter_input(INPUT_POST, 'invId');
