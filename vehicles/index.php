@@ -28,19 +28,18 @@ switch ($action) {
     case 'add-classification':
         //filter and store data
         $classificationName = filter_input(INPUT_POST, 'classificationName');
-        $classificationId = filter_input(INPUT_POST, 'classificationId');
         // Check for missing data
-        if (empty($classificationName) || empty($classificationId)) {
+        if (empty($classificationName)) {
             $message = '<p>Please provide a car type.</p>';
             include '../view/add-classification.php';
             exit;
         }
 
         // Send the data to the classification
-        $input_carclassification = input_carclassification($classificationName, $classificationId);
+        $classification_output = input_carclassification($classificationName);
 
         // Check and report the result
-        if ($input_inventory === 1) {
+        if ($classification_output  === 1) {
             $message = "<p>Thanks for your submission</p>";
             include '../view/add-classification.php';
             exit;
@@ -72,10 +71,10 @@ switch ($action) {
 
 
         // Send the data to the inventory
-        $input_inventory = input_inventory($invId, $invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId);
+        $inventory_output = input_inventory($invId, $invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId);
 
         // Check and report the result
-        if ($input_inventory === 1) {
+        if ($inventory_output === 1) {
             $message = "<p>Thanks for your submission</p>";
             include '../view/add-vehicle.php';
             exit;

@@ -23,12 +23,14 @@
                 echo $message;
             }
             ?>
-            <form method="post" action="/phpmotors/accounts/index.php" class="login">
+            <form method="post" action="/phpmotors/vehicles/index.php" class="login">
                 <h2>Car Classification</h2>
-                <label id="a" for="classificationId">Classification Name:</label>
-                <input name="classificaitonId" id="classificationId" type="text" placeholder="Sports" required>
-                <p>Click (Apply Now) to add your car to the navigation bar.</p>
-                <a class="register_btn" href="/phpmotors/view/vehicle-man.php">Apply Now</a>
+                <label id="a" for="classificationName">Classification Name:</label>
+                <input name="classificationName" id="cName" type="text" placeholder="Car Type" required>
+                <p>Click (ADD CLASSIFICATION) to add your car to the navigation bar.</p>
+                <input type="submit" name="submit" id="regbtn" value="ADD CLASSIFICATION">
+                <input type="hidden" name="action" value="add-classification">
+                <a class="register_btn" href="/phpmotors/view/vehicle-man.php">Return to Vehicle Managment</a>
             </form>
         </main>
         <hr>

@@ -4,19 +4,18 @@
 // This will handle Vehicle updating
 
 
-function input_carclassification($classificationId, $classificationName)
+function input_carclassification($classificationName)
 {
     // Create a connection object using the phpmotors connection function
     $db = phpmotorsConnect();
     // The SQL statement
-    $sql = 'INSERT INTO carclassification (classificationId, classificationName)
-     VALUES (:classificationId, :classificationName)';
+    $sql = 'INSERT INTO carclassification (classificationName)
+     VALUES (:classificationName)';
     // Create the prepared statement using the phpmotors connection
     $stmt = $db->prepare($sql);
     // The next 2 lines replace the placeholders in the SQL
     // statement with the actual values in the variables
     // and tells the database the type of data it is
-    $stmt->bindValue(':classificationId', $classificationId, PDO::PARAM_STR);
     $stmt->bindValue(':classificationName', $classificationName, PDO::PARAM_STR);
     // Insert the data
     $stmt->execute();
