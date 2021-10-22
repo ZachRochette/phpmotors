@@ -5,6 +5,8 @@
 require_once '../library/connections.php';
 // Get the PHP Motors model for use as needed
 require_once '../model/main-model.php';
+// Get the accounts-model
+require_once '../model/accounts-model.php';
 
 // Get the array of classifications
 $classifications = getClassifications();
@@ -26,11 +28,14 @@ switch ($action) {
     case 'login':
         include '../view/login.php';
         break;
-    case 'register':
-        include '../view/register.php';
-        break;
+        // case 'register':
+        //     include '../view/register.php';
+        //     break;
     case 'home':
         include '../view/home.php';
+        break;
+    case 'register':
+        echo 'You are in the register case statement.';
         break;
     default:
         echo 'something went wrong';
