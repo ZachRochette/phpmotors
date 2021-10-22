@@ -21,13 +21,13 @@
             <div class="register">
                 <h2>Log In</h2>
                 <form method="post" action="/phpmotors/accounts/index.php">
-                    <label id="a" for="clientFirstname">First Name:</label>
+                    <label for="clientFirstname">First Name:</label>
                     <input name="clientFirstname" id="clientFirstname" type="text" placeholder="First Name" required>
-                    <label id="b" for="clientLastname">Last Name:</label>
+                    <label for="clientLastname">Last Name:</label>
                     <input name="clientLastname" id="clientLastname" type="text" placeholder="Last Name" required>
-                    <label id="c" for="clientEmail">Email:</label>
+                    <label for="clientEmail">Email:</label>
                     <input name="clientEmail" id="clientEmail" type="text" placeholder="Email Address" required>
-                    <label id="d" for="clientPassword">Password:</label>
+                    <label for="clientPassword">Password:</label>
                     <input name="clientPassword" id="clientPassword" type="password" placeholder="Password" required>
                     <input type="submit" name="submit" id="regbtn" value="Register">
                     <input type="hidden" name="action" value="register">
