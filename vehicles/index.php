@@ -25,14 +25,8 @@ if ($action == NULL) {
 }
 
 switch ($action) {
-    case 'home':
-        include '../view/home.php';
-        break;
     case 'add-classification':
         include '../view/add-classification.php';
-        break;
-    case 'add-classification':
-        include '../view/add-vehicle.php';
         break;
     case 'add-vehicle':
         // Filter and store the data
@@ -52,7 +46,7 @@ switch ($action) {
         $classificationId = filter_input(INPUT_POST, 'classificationId');
         break;
     default:
-        echo 'something went wrong';
+        include '../view/home.php';
         break;
 }
 

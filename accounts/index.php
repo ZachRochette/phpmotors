@@ -31,9 +31,6 @@ switch ($action) {
         // case 'register':
         //     include '../view/register.php';
         //     break;
-    case 'home':
-        include '../view/home.php';
-        break;
     case 'register':
         // Filter and store the data
         $clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
@@ -42,7 +39,7 @@ switch ($action) {
         $clientPassword = filter_input(INPUT_POST, 'clientPassword');
         break;
     default:
-        echo 'something went wrong';
+        include '../view/home.php';
         break;
 }
 
