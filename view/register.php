@@ -18,16 +18,21 @@
             echo $navList; ?>
         </nav>
         <main>
+            <?php
+            if (isset($message)) {
+                echo $message;
+            }
+            ?>
             <form method="post" action="/phpmotors/accounts/index.php" class="register">
                 <h2>Log In</h2>
                 <label id="a" for="clientFirstname">First Name:</label>
-                <input name="clientFirstname" id="clientFirstname" type="text" placeholder="First Name" required>
+                <input name="clientFirstname" id="fname" type="text" placeholder="First Name">
                 <label id="b" for="clientLastname">Last Name:</label>
-                <input name="clientLastname" id="clientLastname" type="text" placeholder="Last Name" required>
+                <input name="clientLastname" id="lname" type="text" placeholder="Last Name">
                 <label id="c" for="clientEmail">Email:</label>
-                <input name="clientEmail" id="clientEmail" type="text" placeholder="Email Address" required>
+                <input name="clientEmail" id="email" type="email" placeholder="Email Address">
                 <label id="d" for="clientPassword">Password:</label>
-                <input name="clientPassword" id="clientPassword" type="password" placeholder="Password" required>
+                <input name="clientPassword" id="password" type="password" placeholder="Password">
                 <input type="submit" name="submit" id="regbtn" value="Register">
                 <input type="hidden" name="action" value="register">
             </form>
