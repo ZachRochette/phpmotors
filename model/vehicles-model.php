@@ -27,19 +27,18 @@ function input_carclassification($classificationName)
     return $rowsChanged;
 }
 
-function input_inventory($invId, $invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor,  $classificationId)
+function input_inventory($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor,  $classificationId)
 {
     // Create a connection object using the phpmotors connection function
     $db = phpmotorsConnect();
     // The SQL statement
-    $sql = 'INSERT INTO inventory (invId, invMake, invModel, invDescription, invImage, invThumbnail, invPrice, invStock, invColor, classificationId)
-     VALUES (:invId, :invMake, :invModel, :invDescription, :invImage, :invThumbnail, :invPrice, :invStock, :invColor, :classificationId)';
+    $sql = 'INSERT INTO inventory (invMake, invModel, invDescription, invImage, invThumbnail, invPrice, invStock, invColor, classificationId)
+     VALUES (:invMake, :invModel, :invDescription, :invImage, :invThumbnail, :invPrice, :invStock, :invColor, :classificationId)';
     // Create the prepared statement using the phpmotors connection
     $stmt = $db->prepare($sql);
     // The next 2 lines replace the placeholders in the SQL
     // statement with the actual values in the variables
     // and tells the database the type of data it is
-    $stmt->bindValue(':invId', $invId, PDO::PARAM_STR);
     $stmt->bindValue(':invMake', $invMake, PDO::PARAM_STR);
     $stmt->bindValue(':invModel', $invModel, PDO::PARAM_STR);
     $stmt->bindValue(':invDescription', $invDescription, PDO::PARAM_STR);

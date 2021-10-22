@@ -23,15 +23,29 @@
                 echo $message;
             }
             ?>
-            <form method="post" action="/phpmotors/accounts/index.php" class="login">
-                <h2>Log In</h2>
-                <label id="a" for="clientEmail">Email:</label>
-                <input name="clientEmail" id="clientEmail" type="text" placeholder="Username" required>
-                <label id="b" for="clientPassword">Password:</label>
-                <input name="clientPassword" id="clientPassword" type="password" placeholder="Password" required>
-                <button>Login</button>
-                <p>Not a member yet?</p>
-                <a class="register_btn" href="/phpmotors/accounts?action=register">Create Account</a>
+            <form method="post" action="/phpmotors/vehicles/index.php" class="login">
+                <h2>Add Vehicle:</h2>
+                <label for="classificationId"> ID:</label>
+                <input name="classificationId" id="classification" type="number" required>
+                <label for="invMake"> Make:</label>
+                <input name="invMake" id="make" type="text" required>
+                <label for="invModel"> Model:</label>
+                <input name="invModel" id="model" type="text" required>
+                <label for="invDescription"> Description:</label>
+                <input name="invDescription" id="description" type="text" required>
+                <label for="invImage"> Image:</label>
+                <input name="invImage" id="image" type="text" required>
+                <label for="invThumbnail"> Thumbnail:</label>
+                <input name="invThumbnail" id="Thumbnail" type="text" required>
+                <label for="invPrice">Price:</label>
+                <input name="invPrice" id="price" type="number" required>
+                <label for="invStock"> Inventory:</label>
+                <input name="invStock" id="stock" type="number" required>
+                <label for="invColor"> Color:</label>
+                <input name="invColor" id="color" type="text" required>
+                <input type="submit" name="submit" id="regbtn" value="Add Vehicle">
+                <input type="hidden" name="action" value="add-vehicle">
+                <a class="register_btn" href="/phpmotors/view/vehicle-man.php">Return to Vehicle Managment</a>
             </form>
         </main>
         <hr>
