@@ -88,6 +88,6 @@ switch ($action) {
         break;
 
     default:
-        include '../view/home.php';
+        include '../view/vehicle-man.php';
         break;
 }

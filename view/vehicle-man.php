@@ -14,15 +14,11 @@
             <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
         </header>
         <nav>
-            <?php //require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php';
-            echo $navList; ?>
+            <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php'; ?>
         </nav>
         <main>
-            <h1>Vehicle Management</h1>
-            <ul>
-                <li> <a href="/phpmotors/vehicles?action=add-classification" title="add classification view">Add A Classification</a></li>
-                <li> <a href="/phpmotors/vehicles?action=add-vehicle" title="add a vehicle view">Add A Vehicle</a></li>
-            </ul>
+            <li> <a href="view\add-classification.php" title="Add car classification">Car Classification</a></li>
+            <li> <a href="view\add-vehicle.php" title="Add car classification">Car Classification</a></li>
         </main>
         <hr>
         <footer>
