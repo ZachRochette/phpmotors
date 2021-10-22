@@ -26,7 +26,27 @@ if ($action == NULL) {
 
 switch ($action) {
     case 'add-classification':
-        include '../view/add-classification.php';
+
+        // Check for missing data
+        if (empty($classificationName) || empty($classificationId)) {
+            $message = '<p>Please provide information for all empty form fields.</p>';
+            include '../view/add-classification.php';
+            exit;
+        }
+
+        // Send the data to the classification
+        $input_carclassification = input_carclassification($classificationName, $classificationId);
+
+        // Check and report the result
+        if ($input_inventory === 1) {
+            $message = "<p>Thanks for your submission</p>";
+            include '../view/add-classification.php';
+            exit;
+        } else {
+            $message = "<p>Sorry $clientFirstname, but the submission failed. Please try again.</p>";
+            include '../view/add-classification.php';
+            exit;
+        }
         break;
     case 'add-vehicle':
         // Filter and store the data
@@ -40,6 +60,29 @@ switch ($action) {
         $invStock = filter_input(INPUT_POST, 'invStock');
         $invColor = filter_input(INPUT_POST, 'invColor');
         $classificationId = filter_input(INPUT_POST, 'classificationId');
+
+        // Check for missing data
+        if (empty($invId) || empty($invMake) || empty($invModel) || empty($invDescription) || ($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invColor) || empty($classificationId)) {
+            $message = '<p>Please provide information for all empty form fields.</p>';
+            include '../view/add-vehicle.php';
+            exit;
+        }
+
+
+        // Send the data to the inventory
+        $input_inventory = input_inventory($invId, $invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId);
+
+        // Check and report the result
+        if ($input_inventory === 1) {
+            $message = "<p>Thanks for your submission</p>";
+            include '../view/add-vehicle.php';
+            exit;
+        } else {
+            $message = "<p>Sorry $clientFirstname, but the submission failed. Please try again.</p>";
+            include '../view/add-vehicle.php';
+            exit;
+        }
+
         break;
     case 'add-classification':
         $classificationName = filter_input(INPUT_POST, 'classificationName');
@@ -48,46 +91,4 @@ switch ($action) {
     default:
         include '../view/home.php';
         break;
-}
-
-// Check for missing data
-if (empty($invId) || empty($invMake) || empty($invModel) || empty($invDescription) || ($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invColor) || empty($classificationId)) {
-    $message = '<p>Please provide information for all empty form fields.</p>';
-    include '../view/add-vehicle.php';
-    exit;
-}
-
-// Check for missing data
-if (empty($classificationName) || empty($classificationId)) {
-    $message = '<p>Please provide information for all empty form fields.</p>';
-    include '../view/add-classification.php';
-    exit;
-}
-
-// Send the data to the inventory
-$input_inventory = input_inventory($invId, $invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId);
-
-// Check and report the result
-if ($input_inventory === 1) {
-    $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
-    include '../view/login.php';
-    exit;
-} else {
-    $message = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
-    include '../view/registration.php';
-    exit;
-}
-
-// Send the data to the classification
-$input_carclassification = input_carclassification($classificationName, $classificationId);
-
-// Check and report the result
-if ($input_carclassification === 1) {
-    $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
-    include '../view/login.php';
-    exit;
-} else {
-    $message = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
-    include '../view/registration.php';
-    exit;
 }
