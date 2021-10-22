@@ -70,7 +70,7 @@ switch ($action) {
 
         // Check for missing data
         if (empty($invMake) || empty($invModel) || empty($invDescription) || ($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invColor)) {
-            $message = '<p>Please provide information for all empty fields.</p>';
+            $message = '<p>Please fill in all fields.</p>';
             include '../view/add-vehicle.php';
             exit;
         }
