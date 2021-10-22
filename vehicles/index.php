@@ -5,8 +5,8 @@
 require_once '../library/connections.php';
 // Get the PHP Motors model for use as needed
 require_once '../model/main-model.php';
-// Get the accounts-model
-require_once '../model/accounts-model.php';
+// Get the Vehicles-model
+require_once '../model/vehicles-model.php';
 
 // Get the array of classifications
 $classifications = getClassifications();
@@ -25,21 +25,25 @@ if ($action == NULL) {
 }
 
 switch ($action) {
-    case 'login':
-        include '../view/login.php';
-        break;
-        // case 'register':
-        //     include '../view/register.php';
-        //     break;
     case 'home':
         include '../view/home.php';
         break;
-    case 'register':
+    case 'add-vehicle':
         // Filter and store the data
-        $clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
-        $clientLastname = filter_input(INPUT_POST, 'clientLastname');
-        $clientEmail = filter_input(INPUT_POST, 'clientEmail');
-        $clientPassword = filter_input(INPUT_POST, 'clientPassword');
+        $invId = filter_input(INPUT_POST, 'invId');
+        $invMake = filter_input(INPUT_POST, 'invMake');
+        $invModel = filter_input(INPUT_POST, 'invModel');
+        $invDescription = filter_input(INPUT_POST, 'invDescription');
+        $invImage = filter_input(INPUT_POST, 'invImage');
+        $invThumbnail = filter_input(INPUT_POST, 'invThumbnail');
+        $invPrice = filter_input(INPUT_POST, 'invPrice');
+        $invStock = filter_input(INPUT_POST, 'invStock');
+        $invColor = filter_input(INPUT_POST, 'invColor');
+        $classificationId = filter_input(INPUT_POST, 'classificationId');
+        break;
+    case 'add-classification':
+        $classificationName = filter_input(INPUT_POST, 'classificationName');
+        $classificationId = filter_input(INPUT_POST, 'classificationId');
         break;
     default:
         echo 'something went wrong';
@@ -47,17 +51,38 @@ switch ($action) {
 }
 
 // Check for missing data
-if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($clientPassword)) {
+if (empty($invId) || empty($invMake) || empty($invModel) || empty($invDescription) || ($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invColor) || empty($classificationId)) {
     $message = '<p>Please provide information for all empty form fields.</p>';
-    include '../view/register.php';
+    include '../view/add-vehicle.php';
     exit;
 }
 
-// Send the data to the model
-$regOutcome = regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassword);
+// Check for missing data
+if (empty($classificationName) || empty($classificationId)) {
+    $message = '<p>Please provide information for all empty form fields.</p>';
+    include '../view/add-classification.php';
+    exit;
+}
+
+// Send the data to the inventory
+$input_inventory = input_inventory($invId, $invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId);
 
 // Check and report the result
-if ($regOutcome === 1) {
+if ($input_inventory === 1) {
+    $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
+    include '../view/login.php';
+    exit;
+} else {
+    $message = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
+    include '../view/registration.php';
+    exit;
+}
+
+// Send the data to the classification
+$input_carclassification = input_carclassification($classificationName, $classificationId);
+
+// Check and report the result
+if ($input_carclassification === 1) {
     $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
     include '../view/login.php';
     exit;
