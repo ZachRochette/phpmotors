@@ -1,5 +1,3 @@
-<!-- Car Classification Page -->
-
 <!DOCTYPE html>
 <html lang="en">
 
