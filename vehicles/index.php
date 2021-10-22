@@ -62,7 +62,7 @@ switch ($action) {
         $classificationId = filter_input(INPUT_POST, 'classificationId');
 
         // Check for missing data
-        if (empty($invMake) || empty($invModel) || empty($invDescription) || ($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invColor) || empty($classificationId)) {
+        if (empty($invMake) || empty($invModel) || empty($invDescription) || ($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invColor)) {
             $message = '<p>Please fill in all fields.</p>';
             include '../view/add-vehicle.php';
             exit;
