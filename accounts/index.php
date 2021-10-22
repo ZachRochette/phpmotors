@@ -49,7 +49,7 @@ switch ($action) {
 // Check for missing data
 if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($clientPassword)) {
     $message = '<p>Please provide information for all empty form fields.</p>';
-    include '../view/register.php';
+    include '../view/registration.php';
     exit;
 }
 
