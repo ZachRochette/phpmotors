@@ -19,7 +19,6 @@ foreach ($classifications as $classification) {
 }
 $navList .= '</ul>';
 
-
 $action = filter_input(INPUT_GET, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_POST, 'action');
@@ -63,12 +62,11 @@ switch ($action) {
         $classificationId = filter_input(INPUT_POST, 'classificationId');
 
         // Check for missing data
-        if (empty($invMake) || empty($invModel) || empty($invDescription) || ($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invColor)) {
+        if (empty($invMake) || empty($invModel) || empty($invDescription) || ($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invColor) || empty($classificationId)) {
             $message = '<p>Please fill in all fields.</p>';
             include '../view/add-vehicle.php';
             exit;
         }
-
 
         // Send the data to the inventory
         $inventory_output = input_inventory($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId);
