@@ -49,6 +49,8 @@ switch ($action) {
             exit;
         }
         break;
+
+
     case 'add-vehicle':
         // Filter and store the data
         $invMake = filter_input(INPUT_POST, 'invMake');
@@ -62,7 +64,7 @@ switch ($action) {
         $classificationId = filter_input(INPUT_POST, 'classificationId');
 
         // Check for missing data
-        if (empty($invMake) || empty($invModel) || empty($invDescription) || ($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invColor) || empty($classificationId)) {
+        if (empty($invMake) || empty($invModel) || empty($invDescription) || empty($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invColor) || empty($classificationId)) {
             $message = '<p>Please fill in all fields.</p>';
             include '../view/add-vehicle.php';
             exit;
@@ -70,7 +72,7 @@ switch ($action) {
 
 
         // Send the data to the inventory
-        $inventory_output = input_inventory($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId);
+        $inventory_output = input_inventory($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor,  $classificationId);
 
         // Check and report the result
         if ($inventory_output === 1) {
