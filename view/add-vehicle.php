@@ -79,7 +79,7 @@ $classifList .= '</select>';
                                                                         echo "value='$invColor'";
                                                                     }  ?> required>
 
-                <label for="classificationId">ID:</label>
+                <label for="classificationId">Type:</label>
                 <?php
                 echo $classifList; ?>
                 <!-- <select name="classificationId" id="classificationId">
