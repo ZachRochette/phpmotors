@@ -31,8 +31,9 @@
                 <input name="clientLastname" id="lname" type="text" placeholder="Last Name" required>
                 <label id="c" for="clientEmail">Email:</label>
                 <input name="clientEmail" id="email" type="email" placeholder="Email Address" required>
-                <label id="d" for="clientPassword">Password:</label>
-                <input name="clientPassword" id="password" type="password" placeholder="Password" required>
+                <label for="clientPassword">Password:</label>
+                <span>Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
+                <input type="password" name="clientPassword" id="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                 <input type="submit" name="submit" id="regbtn" value="Register Now">
                 <input type="hidden" name="action" value="register">
             </form>
