@@ -25,8 +25,9 @@
             ?>
             <form method="post" action="/phpmotors/vehicles/index.php" class="login">
                 <h2>Car Classification</h2>
+                <span>Car type must be less than 30 characters</span>
                 <label for="classificationName">Classification Name:</label>
-                <input name="classificationName" id="classificationName" type="text" placeholder="Car Type" required>
+                <input name="classificationName" id="classificationName" type="text" placeholder="Car Type" required pattern="^[A-z]{1,30}$">
                 <p>Click (ADD CLASSIFICATION) to add your car to the navigation bar.</p>
                 <input type="submit" name="submit" id="regbtn" value="ADD CLASSIFICATION">
                 <input type="hidden" name="action" value="add-classification">
