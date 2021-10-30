@@ -12,27 +12,21 @@ require_once '../library/functions.php';
 
 // Get the array of classifications
 $classifications = getClassifications();
+//Build the navigation bar
+$navList = buildNavigation($classifications);
 
-// Build a navigation bar using the $classifications array
-$navList = '<ul>';
-$navList .= "<li><a href='/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
-foreach ($classifications as $classification) {
-    $navList .= "<li><a href='/phpmotors/index.php?action=" . urlencode($classification['classificationName']) . "' title='View our $classification[classificationName] product line'>$classification[classificationName]</a></li>";
-}
-$navList .= '</ul>';
+// $classifList = '<select name="classificationId">';
+// foreach ($classifications as $classification) {
+//     $classifList .= "<option value='$classification[classificationId]'";
+//     if (isset($classificationId)) {
+//         if ($classifiaction['classificationID'] === $classificationId) {
+//             $classifList .= ' selected ';
+//         }
+//     }
 
-$classifList = '<select name="classificationId">';
-foreach ($classifications as $classification) {
-    $classifList .= "<option value='$classification[classificationId]'";
-    if (isset($classificationId)) {
-        if ($classifiaction['classificationID'] === $classificationId) {
-            $classifList .= ' selected ';
-        }
-    }
-
-    $classifList .= ">$classification[classificationName]</option>";
-}
-$classifList .= '</select>';
+//     $classifList .= ">$classification[classificationName]</option>";
+// }
+// $classifList .= '</select>';
 
 $action = filter_input(INPUT_GET, 'action');
 if ($action == NULL) {
