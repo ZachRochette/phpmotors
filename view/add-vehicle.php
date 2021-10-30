@@ -50,9 +50,9 @@ $classifList .= '</select>';
                                                                     }  ?> required>
 
                 <label for="invDescription">Description:</label>
-                <input name="invDescription" id="invDescription" type="textarea" <?php if (isset($invDescription)) {
-                                                                                        echo "value='$invDescription'";
-                                                                                    }  ?> required>
+                <input name="invDescription" id="invDescription" type="text" <?php if (isset($invDescription)) {
+                                                                                    echo "value='$invDescription'";
+                                                                                }  ?> required>
 
                 <label for="invImage">Image:</label>
                 <input name="invImage" id="invImage" type="text" placeholder="images/no-image.png" <?php if (isset($invImage)) {
@@ -79,7 +79,7 @@ $classifList .= '</select>';
                                                                         echo "value='$invColor'";
                                                                     }  ?> required>
 
-                <label for="classificationId">Type:</label>
+                <label>Type:</label>
                 <?php
                 echo $classifList; ?>
                 <!-- <select name="classificationId" id="classificationId">
