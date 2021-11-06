@@ -1,10 +1,6 @@
 <?php
 // Accounts Controller
 
-// Create or access a Session
-session_start();
-
-
 // Get the database connection file
 require_once '../library/connections.php';
 // Get the PHP Motors model for use as needed
@@ -44,14 +40,6 @@ switch ($action) {
         $clientPassword = trim(filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING));
         $clientEmail = checkEmail($clientEmail);
         $checkPassword = checkPassword($clientPassword);
-        //Check for existing email address
-        $existingEmail = checkExistingEmail($clientEmail);
-
-        if ($existingEmail) {
-            $message = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
-            include '../view/login.php';
-            exit;
-        }
 
         // Check for missing data
         if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($checkPassword)) {
@@ -68,7 +56,6 @@ switch ($action) {
 
         // Check and report the result
         if ($regOutcome === 1) {
-            setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');
             $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
             include '../view/login.php';
             exit;
