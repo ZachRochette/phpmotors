@@ -19,11 +19,10 @@
         </nav>
         <main>
             <?php
-            if (isset($message)) {
-                echo $message;
-            }
-            ?>
-            <form method="post" action="/phpmotors/accounts/index.php" class="login">
+            if (isset($_SESSION['message'])) {
+                echo $_SESSION['message'];
+            } ?>
+            <form method="post" action="/phpmotors/accounts/" class="login">
                 <h2>Log In</h2>
                 <label id="a" for="clientEmail">Email:</label>
                 <input name="clientEmail" id="clientEmail" type="email" placeholder="Example@example.com" <?php if (isset($clientEmail)) {
