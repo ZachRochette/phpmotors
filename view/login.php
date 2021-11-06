@@ -23,7 +23,7 @@
                 echo $message;
             }
             ?>
-            <form method="post" action="/phpmotors/accounts/index.php" class="login">
+            <form method="post" action="/phpmotors/accounts" class="login">
                 <h2>Log In</h2>
                 <label id="a" for="clientEmail">Email:</label>
                 <input name="clientEmail" id="clientEmail" type="email" placeholder="Example@example.com" <?php if (isset($clientEmail)) {
