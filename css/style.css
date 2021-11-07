@@ -35,6 +35,15 @@ a {
   padding-top: 25px;
   padding-right: 25px;
 }
+
+.acc {
+  font-family: "Source Code Pro", monospace;
+  text-decoration: none;
+  color: #3a3a3a;
+  float: right;
+  padding-top: 25px;
+  padding-right: 25px;
+}
 /*-------- Nav -------*/
 nav {
   width: 100%;
