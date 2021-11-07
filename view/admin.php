@@ -24,7 +24,18 @@ if (!$_SESSION['loggedin']) {
             echo $navList; ?>
         </nav>
         <main>
-            <h1>First and Last name</h1>
+            <?php
+            echo $_SESSION['clientData']['clientFirstname'], " ", $_SESSION['clientData']['clientLastname'],
+            "</h1>
+            <ul>
+            <li> First name: ", $_SESSION['clientData']['clientFirstname'], " </li>
+            <li> Last name: ", $_SESSION['clientData']['clientLastname'], " </li>
+            <li> Email address: ", $_SESSION['clientData']['clientEmail'], " </li>
+            </ul>";
+            if ($_SESSION['clientData']['clientLevel'] > 1) {
+                echo "<p><a href='/phpmotors/vehicles/index.php?action=" . urlencode('vehicles') . "'title='Vehicle Management Page'>Vehicle Management Page</a></p>";
+            } ?>
+
         </main>
         <hr>
         <footer>

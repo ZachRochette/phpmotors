@@ -18,6 +18,8 @@ $classifications = getClassifications();
 //build navigation
 $navList = Navigation($classifications);
 
+$logout = "<a href='/phpmotors/index.php?action=" . urlencode('logout') . "'title='Logout Here' id='acc'>Logout</a>";
+
 // Build a navigation bar using the $classifications array
 // $navList = '<ul>';
 // $navList .= "<li><a href='/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
@@ -34,6 +36,9 @@ if ($action == NULL) {
 switch ($action) {
     case 'login':
         include '../view/login.php';
+        break;
+    case 'admin':
+        include '../view/admin.php';
         break;
     case 'register':
         // Filter and store the data

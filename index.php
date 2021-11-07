@@ -20,6 +20,7 @@ $classifications = getClassifications();
 //build navigation
 $navList = Navigation($classifications);
 
+$logout = "<a href='/phpmotors/index.php?action=" . urlencode('logout') . "'title='Logout Here id='acc'>Logout</a>";
 // // Build a navigation bar using the $classifications array
 // $navList = '<ul>';
 // $navList .= "<li><a href='/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
@@ -36,6 +37,12 @@ if ($action == NULL) {
 switch ($action) {
     case 'template':
         include 'view/template.php';
+        break;
+    case 'logout':
+        $_SESSION['loggedin'] = FALSE;
+        session_unset();
+        session_destroy();
+        include 'view/home.php';
         break;
     default:
         include 'view/home.php';
