@@ -18,7 +18,7 @@ $classifications = getClassifications();
 //build navigation
 $navList = Navigation($classifications);
 
-$logout = "<a href='/phpmotors/index.php?action=" . urlencode('logout') . "'title='Logout Here'>Logout</a>";
+$logout = "<a href='/phpmotors/index.php?action=" . urlencode('logout') . "'title='Logout Here' id='acc'>Logout</a>";
 // // Build a navigation bar using the $classifications array
 // $navList = '<ul>';
 // $navList .= "<li><a href='/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
