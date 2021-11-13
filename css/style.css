@@ -27,6 +27,12 @@ a {
   font-family: "Gemunu Libre", sans-serif;
 }
 
+.notice {
+  font-weight: bold;
+  font-family: "Gemunu Libre", sans-serif;
+  color: red;
+}
+
 #acc {
   font-family: "Source Code Pro", monospace;
   text-decoration: none;

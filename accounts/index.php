@@ -120,6 +120,58 @@ switch ($action) {
         exit;
         break;
 
+    case 'mod':
+        $clientId = filter_input(INPUT_GET, 'clientId', FILTER_VALIDATE_INT);
+        $clientInfo = getClientInfo($clientId);
+        if (count($clientInfo) < 1) {
+            $message = 'Sorry, no client information could be found.';
+        }
+        include '../view/client-update.php';
+        exit;
+        break;
+
+    case 'updateAccount':
+        $clientFirstname = trim(filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_STRING));
+        $clientLastname = trim(filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_STRING));
+        $clientEmail = trim(filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL));
+        $clientPassword = trim(filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING));
+        $clientId = filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_NUMBER_INT);
+        $clientEmail = checkEmail($clientEmail);
+        $existingEmail = checkExistingEmail($clientEmail);
+
+        // Check for existing email address in the table
+        if ($existingEmail) {
+            $message = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
+            include '../view/client-update.php';
+            exit;
+        }
+
+        if (
+            empty($clientFirstname) || empty($clientLastname) || empty($clientEmail)
+        ) {
+            $message = "<p class='notice'>Please fill in the entire form.</p>";
+            include '../view/client-update.php';
+            exit;
+        }
+
+        $updateAccountResult = updateAccount($clientFirstname, $clientLastname, $clientEmail, $clientId);
+        if ($updateAccountResult) {
+            $message = "<p class='notice'>Congratulations, your profile has been succesfully updated.</p>";
+            $_SESSION['message'] = $message;
+            header('location: /view/admin.php/');
+            exit;
+        } else {
+            $message = "<p class='notice'>Error. Your profile was not updated.</p>";
+            include '../view/client-update.php';
+            exit;
+        }
+        // Store the array into the session
+        $_SESSION['clientData'] = $clientData;
+        // Send them to the admin view
+        include '../view/admin.php';
+        exit;
+        break;
+
     default:
         include '../view/home.php';
         break;

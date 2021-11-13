@@ -1,7 +1,10 @@
 <?php
-if (!$_SESSION['loggedin']) {
-    // This test is now "If Session loggedin value is NOT true"
-    header("location: ../index.php");
+if ($_SESSION['clientData']['clientLevel'] < 1) {
+    header('location: /phpmotors/');
+    exit;
+}
+if (isset($_SESSION['message'])) {
+    $message = $_SESSION['message'];
 }
 ?>
 <!DOCTYPE html>
@@ -25,17 +28,24 @@ if (!$_SESSION['loggedin']) {
         </nav>
         <main>
             <?php
-            echo $_SESSION['clientData']['clientFirstname'], " ", $_SESSION['clientData']['clientLastname'],
-            "</h1>
-            <ul>
+            if (isset($message)) {
+                echo $message;
+            }
+            ?>
+            <?php
+            echo '<h1>' . "You are logged in as ", $_SESSION['clientData']['clientFirstname'], " ", $_SESSION['clientData']['clientLastname'] . '</h1>',
+            "<ul>
             <li> First name: ", $_SESSION['clientData']['clientFirstname'], " </li>
             <li> Last name: ", $_SESSION['clientData']['clientLastname'], " </li>
             <li> Email address: ", $_SESSION['clientData']['clientEmail'], " </li>
             </ul>";
             if ($_SESSION['clientData']['clientLevel'] > 1) {
+                echo '<h2>' . "Use this Vehicle Managment link to administer inventory" . '</h2>';
+            }
+            if ($_SESSION['clientData']['clientLevel'] > 1) {
                 echo "<p><a href='/phpmotors/vehicles/index.php?action=" . urlencode('vehicles') . "'title='Vehicle Management Page'>Vehicle Management Page</a></p>";
             } ?>
-
+            <a href="/phpmotors/accounts?action=updateAccount" title="Update Account Information">Update Account Information</a>
         </main>
         <hr>
         <footer>
@@ -45,3 +55,4 @@ if (!$_SESSION['loggedin']) {
 </body>
 
 </html>
+<?php unset($_SESSION['message']); ?>
