@@ -45,6 +45,7 @@ if (isset($_SESSION['message'])) {
             if ($_SESSION['clientData']['clientLevel'] > 1) {
                 echo "<p><a href='/phpmotors/vehicles/index.php?action=" . urlencode('vehicles') . "'title='Vehicle Management Page'>Vehicle Management Page</a></p>";
             } ?>
+            <h2>Use this page to Update your profile</h2>
             <a href="/phpmotors/accounts?action=updateAccount" title="Update Account Information">Update Account Information</a>
         </main>
         <hr>
@@ -52,6 +53,7 @@ if (isset($_SESSION['message'])) {
             <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>
         </footer>
     </div>
+    <script src="../js/client.js"></script>
 </body>
 
 </html>

@@ -188,6 +188,8 @@ switch ($action) {
         break;
 
     default:
-        include '../view/home.php';
+        $classificationList = buildClassificationList($classifications);
+
+        include '../view/admin.php';
         break;
 }
