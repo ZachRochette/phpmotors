@@ -60,6 +60,20 @@ function getClient($clientEmail)
     return $clientData;
 }
 
+
+// Get clients by classificationId 
+function getClientByClassification($classificationId)
+{
+    $db = phpmotorsConnect();
+    $sql = ' SELECT * FROM clients WHERE classificationId = :classificationId';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':classificationId', $classificationId, PDO::PARAM_INT);
+    $stmt->execute();
+    $inventory = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $inventory;
+}
+
 // Get vehicle information by invId
 function getClientInfo($clientId)
 {

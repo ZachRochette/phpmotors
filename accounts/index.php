@@ -28,6 +28,8 @@ $logout = "<a href='/phpmotors/index.php?action=" . urlencode('logout') . "'titl
 // }
 // $navList .= '</ul>';
 
+
+
 $action = filter_input(INPUT_GET, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_POST, 'action');
@@ -40,6 +42,7 @@ switch ($action) {
     case 'admin':
         include '../view/admin.php';
         break;
+
     case 'register':
         // Filter and store the data
         $clientFirstname = trim(filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_STRING));
@@ -120,6 +123,19 @@ switch ($action) {
         exit;
         break;
 
+        /* * ********************************** 
+        * Get clients by classificationId 
+        * Used for starting Update & Delete process 
+        * ********************************** */
+    case 'getClientdata':
+        // Get the classificationId 
+        $classificationId = filter_input(INPUT_GET, 'classificationId', FILTER_SANITIZE_NUMBER_INT);
+        // Fetch the vehicles by classificationId from the DB 
+        $clientArray = getClientByClassification($classificationId);
+        // Convert the array to a JSON object and send it back 
+        echo json_encode($clientArray);
+        break;
+
     case 'mod':
         $clientId = filter_input(INPUT_GET, 'clientId', FILTER_VALIDATE_INT);
         $clientInfo = getClientInfo($clientId);
@@ -134,7 +150,6 @@ switch ($action) {
         $clientFirstname = trim(filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_STRING));
         $clientLastname = trim(filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_STRING));
         $clientEmail = trim(filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL));
-        $clientPassword = trim(filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING));
         $clientId = filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_NUMBER_INT);
         $clientEmail = checkEmail($clientEmail);
         $existingEmail = checkExistingEmail($clientEmail);
@@ -154,8 +169,8 @@ switch ($action) {
             exit;
         }
 
-        $updateAccountResult = updateAccount($clientFirstname, $clientLastname, $clientEmail, $clientId);
-        if ($updateAccountResult) {
+        $updateResult = updateAccount($clientFirstname, $clientLastname, $clientEmail, $clientId);
+        if ($updateResult) {
             $message = "<p class='notice'>Congratulations, your profile has been succesfully updated.</p>";
             $_SESSION['message'] = $message;
             header('location: /view/admin.php/');
@@ -165,11 +180,11 @@ switch ($action) {
             include '../view/client-update.php';
             exit;
         }
-        // Store the array into the session
-        $_SESSION['clientData'] = $clientData;
-        // Send them to the admin view
-        include '../view/admin.php';
-        exit;
+        // // Store the array into the session
+        // $_SESSION['clientData'] = $clientData;
+        // // Send them to the admin view
+        // include '../view/admin.php';
+        // exit;
         break;
 
     default:
