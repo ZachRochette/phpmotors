@@ -128,6 +128,11 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
 
                 <input type="submit" name="submit" id="regbtn" value="Update Vehicle">
                 <input type=" hidden" name="action" value="updateVehicle">
+                <input type="hidden" name="invId" value="<?php if (isset($invInfo['invId'])) {
+                                                                echo $invInfo['invId'];
+                                                            } elseif (isset($invId)) {
+                                                                echo $invId;
+                                                            } ?>">
                 <a class="register_btn" href="/phpmotors/view/vehicle-man.php">Return to Vehicle Managment</a>
             </form>
         </main>

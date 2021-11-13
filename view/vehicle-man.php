@@ -3,6 +3,9 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
     header('location: /phpmotors/');
     exit;
 }
+if (isset($_SESSION['message'])) {
+    $message = $_SESSION['message'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,3 +56,4 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
 </body>
 
 </html>
+<?php unset($_SESSION['message']); ?>
