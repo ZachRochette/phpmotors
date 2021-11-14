@@ -74,7 +74,7 @@ function getClientByClassification($classificationId)
     return $inventory;
 }
 
-// Get vehicle information by invId
+// Get client information
 function getClientInfo($clientId)
 {
     $db = phpmotorsConnect();
