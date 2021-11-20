@@ -38,7 +38,7 @@ if (!$_SESSION['loggedin']) {
                 <p><a href='/phpmotors/accounts/index.php?action=" . urlencode('account-update') . "' title='Account Update Page'>Account Update Page</a></p>";
             if ($_SESSION['clientData']['clientLevel'] > 1) {
                 echo "<h3>Vehicles Management</h3>
-                    <p>Use this link to administer inventory: <a href='/phpmotors/vehicles/index.php?action=" . urlencode('vehicles') . "' title='Vehicle Management Page'>Vehicle Management Page</a></p>";
+                <p>Use this link to administer inventory: <a href='/phpmotors/vehicles/index.php?action=" . urlencode('vehicles') . "' title='Vehicle Management Page'>Vehicle Management Page</a></p>";
             } ?>
         </main>
         <hr>

@@ -1,7 +1,7 @@
 <?php
 if (!$_SESSION['loggedin']) {
-    // This test is now "If Session loggedin value is NOT true"
-    header("location: ../index.php");
+    header("Location: http://lvh.me/phpmotors/");
+    exit;
 }
 ?>
 <!DOCTYPE html>
@@ -9,17 +9,13 @@ if (!$_SESSION['loggedin']) {
 
 <head>
     <meta charset="UTF-8">
-    <title><?php if (isset($clientInfo['clientFirstname']) && isset($clientInfo['clientLastname'])) {
-                echo "Update $clientInfo[clientFirstname] $clientInfo[clientLastname]";
-            } elseif (isset($clientFirstname) && isset($clientLastname)) {
-                echo "Update $clientFirstname $clientLastname";
-            } ?> | PHP Motors</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/phpmotors/css/style.css" type="text/css" rel="stylesheet" media="screen">
+    <title>Account Update | PHP Motors</title>
+    <link rel="stylesheet" title="CSS" media="screen" href="../css/style.css">
 </head>
 
 <body>
     <div id="wrapper">
+
         <header>
             <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
         </header>
@@ -28,65 +24,62 @@ if (!$_SESSION['loggedin']) {
             echo $navList; ?>
         </nav>
         <main>
-            <h1><?php if (isset($clientInfo['clientFirstname']) && isset($clientInfo['clientLastname'])) {
-                    echo "Update $clientInfo[clientFirstname] $clientInfo[clientLastname]";
-                } elseif (isset($clientFirstname) && isset($clientLastname)) {
-                    echo "Update $clientFirstname $clientLastname";
-                } ?></h1>
             <?php
             if (isset($message)) {
                 echo $message;
             }
             ?>
             <h1 style="text-align: center;">Update your account or change your password.</h1>
-            <form method="post" action="/phpmotors/accounts/index.php" class="register">
-                <h1>Update Account</h1>
-                <label for="clientFirstname">First Name:</label>
-                <input name="clientFirstname" id="clientFirstname" type="text" placeholder="First Name" <?php if (isset($clientFirstname)) {
-                                                                                                            echo $clientFirstname;
-                                                                                                        } elseif (isset($clientInfo['clientFirstname'])) {
-                                                                                                            echo $invInfo['clientFirstname'];
-                                                                                                        } ?> required>
-                <label id="b" for="clientLastname">Last Name:</label>
-                <input name="clientLastname" id="lname" type="text" placeholder="Last Name" <?php if (isset($clientLastname)) {
-                                                                                                echo $clientLastname;
-                                                                                            } elseif (isset($clientInfo['clientLastname'])) {
-                                                                                                echo $invInfo['clientLastname'];
-                                                                                            } ?> required>
-                <label id="c" for="clientEmail">Email:</label>
-                <input name="clientEmail" id="email" type="email" placeholder="Email Address" <?php if (isset($clientEmail)) {
-                                                                                                    echo $clientEmail;
-                                                                                                } elseif (isset($clientInfo['clientEmail'])) {
-                                                                                                    echo $invInfo['clientEmail'];
-                                                                                                } ?> required>
-                <input type="submit" name="submit" id="regbtn" value="Update Now">
-                <input type="hidden" name="action" value="updateAccount">
-                <input type="hidden" name="invId" value="<?php if (isset($_SESSION['clientData']['clientId'])) {
-                                                                echo $_SESSION['clientData']['clientId'];
-                                                            } elseif (isset($clientId)) {
-                                                                echo $clientId;
-                                                            } ?>
+            <form action="/phpmotors/accounts/index.php" method="post" class="register">
+                <h1>Account Update</h1>
+                <label for="clientFirstname">First Name: </label><br>
+                <input type="text" name="clientFirstname" id="clientFirstname" required placeholder="First Name" <?php if (isset($clientFirstname)) {
+                                                                                                                        echo "value='$clientFirstname'";
+                                                                                                                    } elseif (isset($_SESSION['clientData']['clientFirstname'])) {
+                                                                                                                        echo "value=", $_SESSION['clientData']['clientFirstname'];
+                                                                                                                    } ?>><br>
+                <label for="clientLastname">Last Name: </label><br>
+                <input type="text" name="clientLastname" id="clientLastname" required placeholder="Last Name" <?php if (isset($clientLastname)) {
+                                                                                                                    echo "value='$clientLastname'";
+                                                                                                                } elseif (isset($_SESSION['clientData']['clientLastname'])) {
+                                                                                                                    echo "value=", $_SESSION['clientData']['clientLastname'];
+                                                                                                                } ?>><br>
+                <label for="clientEmail">Email: </label><br>
+                <input type="text" name="clientEmail" id="clientEmail" required placeholder="Email" <?php if (isset($clientEmail)) {
+                                                                                                        echo "value='$clientEmail'";
+                                                                                                    } elseif (isset($_SESSION['clientData']['clientEmail'])) {
+                                                                                                        echo "value=", $_SESSION['clientData']['clientEmail'];
+                                                                                                    } ?>><br>
+                <input type="hidden" name="submit" value="updateClient">
+                <button name="action" value="updateClient">Update</button>
+                <input type="hidden" name="clientId" value="
+                        <?php if (isset($_SESSION['clientData']['clientId'])) {
+                            echo $_SESSION['clientData']['clientId'];
+                        } elseif (isset($clientId)) {
+                            echo $clientId;
+                        } ?>
                     ">
             </form>
-
             <?php
             if (isset($passMessage)) {
                 echo $passMessage;
             }
             ?>
-            <form method="post" action="/phpmotors/accounts/index.php" class="register">
+            <form action="/phpmotors/accounts/index.php" method="post" class="register">
                 <h1>Change Password</h1>
-                <p>Entering a new password will change your curent one.</p>
-                <label for="clientPassword">Password:</label>
-                <span>Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
-                <input type="password" name="clientPassword" id="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
-                <input type="submit" name="submit" id="regbtn" value="Update Now">
+                <label for="clientPassword">New Password:</label><br>
+                <p>Updating your password will replace your old one.</p>
+                <input type="password" name="clientPassword" id="clientPassword" required placeholder="Password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"><br>
+                <span>Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span><br>
+                <button name="action" value="changePassword">Change Password</button>
+                <!-- Add the action name - value pair -->
                 <input type="hidden" name="action" value="changePassword">
-                <input type="hidden" name="clientId" value=" <?php if (isset($_SESSION['clientData']['clientId'])) {
-                                                                    echo $_SESSION['clientData']['clientId'];
-                                                                } elseif (isset($clientId)) {
-                                                                    echo $clientId;
-                                                                } ?>
+                <input type="hidden" name="clientId" value="
+                        <?php if (isset($_SESSION['clientData']['clientId'])) {
+                            echo $_SESSION['clientData']['clientId'];
+                        } elseif (isset($clientId)) {
+                            echo $clientId;
+                        } ?>
                     ">
             </form>
         </main>
