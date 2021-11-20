@@ -61,16 +61,17 @@ if (!$_SESSION['loggedin']) {
                                                                                                 } ?> required>
                 <input type="submit" name="submit" id="regbtn" value="Update Now">
                 <input type="hidden" name="action" value="updateAccount">
-                <input type="hidden" name="invId" value="<?php if (isset($clientInfo['clientId'])) {
-                                                                echo $clientInfo['clientId'];
+                <input type="hidden" name="invId" value="<?php if (isset($_SESSION['clientData']['clientId'])) {
+                                                                echo $_SESSION['clientData']['clientId'];
                                                             } elseif (isset($clientId)) {
                                                                 echo $clientId;
-                                                            } ?>">
+                                                            } ?>
+                    ">
             </form>
 
             <?php
-            if (isset($message)) {
-                echo $message;
+            if (isset($passMessage)) {
+                echo $passMessage;
             }
             ?>
             <form method="post" action="/phpmotors/accounts/index.php" class="register">
@@ -80,12 +81,13 @@ if (!$_SESSION['loggedin']) {
                 <span>Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
                 <input type="password" name="clientPassword" id="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                 <input type="submit" name="submit" id="regbtn" value="Update Now">
-                <input type="hidden" name="action" value="updatePassword">
-                <input type="hidden" name="clientId" value="<?php if (isset($clientInfo['clientId'])) {
-                                                                echo $clientInfo['clientId'];
-                                                            } elseif (isset($clientId)) {
-                                                                echo $clientId;
-                                                            } ?>">
+                <input type="hidden" name="action" value="changePassword">
+                <input type="hidden" name="clientId" value=" <?php if (isset($_SESSION['clientData']['clientId'])) {
+                                                                    echo $_SESSION['clientData']['clientId'];
+                                                                } elseif (isset($clientId)) {
+                                                                    echo $clientId;
+                                                                } ?>
+                    ">
             </form>
         </main>
         <hr>

@@ -1,10 +1,7 @@
 <?php
-if ($_SESSION['clientData']['clientLevel'] < 1) {
-    header('location: /phpmotors/');
+if (!$_SESSION['loggedin']) {
+    header("Location: http://lvh.me/phpmotors/");
     exit;
-}
-if (isset($_SESSION['message'])) {
-    $message = $_SESSION['message'];
 }
 ?>
 <!DOCTYPE html>
@@ -12,7 +9,7 @@ if (isset($_SESSION['message'])) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Login PHP Motors</title>
+    <title>Admin | PHP Motors</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/phpmotors/css/style.css" type="text/css" rel="stylesheet" media="screen">
 </head>
@@ -26,27 +23,23 @@ if (isset($_SESSION['message'])) {
             <?php //require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php';
             echo $navList; ?>
         </nav>
-        <main>
+        <?php
+        if (isset($_SESSION['message'])) {
+            echo $_SESSION['message'];
+        } ?>
+        <main class='adminInfo'>
             <?php
-            if (isset($message)) {
-                echo $message;
-            }
-            ?>
-            <?php
-            echo '<h1>' . "You are logged in as ", $_SESSION['clientData']['clientFirstname'], " ", $_SESSION['clientData']['clientLastname'] . '</h1>',
-            "<ul>
-            <li> First name: ", $_SESSION['clientData']['clientFirstname'], " </li>
-            <li> Last name: ", $_SESSION['clientData']['clientLastname'], " </li>
-            <li> Email address: ", $_SESSION['clientData']['clientEmail'], " </li>
-            </ul>";
+            echo "<h2>", $_SESSION['clientData']['clientFirstname'], " ", $_SESSION['clientData']['clientLastname'], ", you are logged in</h2>";
+            echo "<ul>
+                <li> First name: ",  $_SESSION['clientData']['clientFirstname'], "</li>
+                <li> Last name: ", $_SESSION['clientData']['clientLastname'], "</li>
+                <li> Email address: ", $_SESSION['clientData']['clientEmail'], "</li>
+                </ul>
+                <p><a href='/phpmotors/accounts/index.php?action=" . urlencode('account-update') . "' title='Account Update Page'>Account Update Page</a></p>";
             if ($_SESSION['clientData']['clientLevel'] > 1) {
-                echo '<h2>' . "Use this Vehicle Managment link to administer inventory" . '</h2>';
-            }
-            if ($_SESSION['clientData']['clientLevel'] > 1) {
-                echo "<p><a href='/phpmotors/vehicles/index.php?action=" . urlencode('vehicles') . "'title='Vehicle Management Page'>Vehicle Management Page</a></p>";
+                echo "<h3>Vehicles Management</h3>
+                    <p>Use this link to administer inventory: <a href='/phpmotors/vehicles/index.php?action=" . urlencode('vehicles') . "' title='Vehicle Management Page'>Vehicle Management Page</a></p>";
             } ?>
-            <h2>Use this page to Update your profile</h2>
-            <a href="/phpmotors/accounts?action=updateAccount" title="Update Account Information">Update Account Information</a>
         </main>
         <hr>
         <footer>
