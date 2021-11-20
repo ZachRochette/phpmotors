@@ -61,42 +61,45 @@ function getClient($clientEmail)
 }
 
 
-// Get clients by classificationId 
-function getClientByClassification($classificationId)
+// Get client data based on ID
+function getClientById($clientId)
 {
     $db = phpmotorsConnect();
-    $sql = ' SELECT * FROM clients WHERE classificationId = :classificationId';
+    $sql = 'SELECT clientId, clientFirstname, clientLastname, clientEmail, clientLevel, clientPassword FROM clients WHERE clientId = :clientId';
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':classificationId', $classificationId, PDO::PARAM_INT);
+    $stmt->bindValue(':clientId', $clientId, PDO::PARAM_STR);
     $stmt->execute();
-    $inventory = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
-    return $inventory;
+    return $clientData;
 }
 
-// Get client information
-function getClientInfo($clientId)
+// Update Client
+function updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId)
 {
     $db = phpmotorsConnect();
-    $sql = 'SELECT * FROM clients WHERE clientId = :clientId';
-    $stmt = $db->prepare($sql);
-    $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
-    $stmt->execute();
-    $invInfo = $stmt->fetch(PDO::FETCH_ASSOC);
-    $stmt->closeCursor();
-    return $invInfo;
-}
-
-// Update client account
-function updateAccount($clientFirstname, $clientLastname, $clientEmail, $clientId)
-{
-    $db = phpmotorsConnect();
-    $sql = 'UPDATE clients SET clientFirstname = :clientFirstname, clientLastname = :clientLastname, clientEmail = :clientEmail WHERE clientId = :clientId';
+    $sql = 'UPDATE clients SET clientFirstname = :clientFirstname, clientLastname = :clientLastname, clientEmail = :clientEmail
+     WHERE clientId = :clientId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':clientFirstname', $clientFirstname, PDO::PARAM_STR);
     $stmt->bindValue(':clientLastname', $clientLastname, PDO::PARAM_STR);
     $stmt->bindValue(':clientEmail', $clientEmail, PDO::PARAM_STR);
-    $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
+    $stmt->bindValue(':clientId', $clientId, PDO::PARAM_STR);
+    $stmt->execute();
+    $rowsChanged = $stmt->rowCount();
+    $stmt->closeCursor();
+    return $rowsChanged;
+}
+
+//Update Password
+function updatePassword($clientPassword, $clientId)
+{
+    $db = phpmotorsConnect();
+    $sql = 'UPDATE clients SET clientPassword = :clientPassword
+     WHERE clientId = :clientId';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':clientPassword', $clientPassword, PDO::PARAM_STR);
+    $stmt->bindValue(':clientId', $clientId, PDO::PARAM_STR);
     $stmt->execute();
     $rowsChanged = $stmt->rowCount();
     $stmt->closeCursor();

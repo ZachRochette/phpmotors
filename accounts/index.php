@@ -20,16 +20,6 @@ $navList = Navigation($classifications);
 
 $logout = "<a href='/phpmotors/index.php?action=" . urlencode('logout') . "'title='Logout Here' id='acc'>Logout</a>";
 
-// Build a navigation bar using the $classifications array
-// $navList = '<ul>';
-// $navList .= "<li><a href='/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
-// foreach ($classifications as $classification) {
-//     $navList .= "<li><a href='/phpmotors/index.php?action=" . urlencode($classification['classificationName']) . "' title='View our $classification[classificationName] product line'>$classification[classificationName]</a></li>";
-// }
-// $navList .= '</ul>';
-
-
-
 $action = filter_input(INPUT_GET, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_POST, 'action');
@@ -84,15 +74,16 @@ switch ($action) {
             exit;
         }
         break;
-    case 'Login':
-        $clientEmail = trim(filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL));
-        $clientPassword = trim(filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING));
-        $clientEmail = checkEmail($clientEmail);
-        $checkPassword = checkPassword($clientPassword);
 
-        // Check for missing data
-        if (empty($clientEmail) || empty($checkPassword)) {
-            $message = '<p>Please provide information for all empty form fields.</p>';
+    case 'Login':
+        $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
+        $clientEmail = checkEmail($clientEmail);
+        $clientPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
+        $passwordCheck = checkPassword($clientPassword);
+
+        // Run basic checks, return if errors
+        if (empty($clientEmail) || empty($passwordCheck)) {
+            $message = '<p class="notice">Please provide a valid email address and password.</p>';
             include '../view/login.php';
             exit;
         }
@@ -123,73 +114,85 @@ switch ($action) {
         exit;
         break;
 
-        /* * ********************************** 
-        * Get clients by classificationId 
-        * Used for starting Update & Delete process 
-        * ********************************** */
-    case 'getClientdata':
-        // Get the classificationId 
-        $classificationId = filter_input(INPUT_GET, 'classificationId', FILTER_SANITIZE_NUMBER_INT);
-        // Fetch the vehicles by classificationId from the DB 
-        $clientArray = getClientByClassification($classificationId);
-        // Convert the array to a JSON object and send it back 
-        echo json_encode($clientArray);
-        break;
-
-    case 'mod':
-        $clientId = filter_input(INPUT_GET, 'clientId', FILTER_VALIDATE_INT);
-        $clientInfo = getClientInfo($clientId);
-        if (count($clientInfo) < 1) {
-            $message = 'Sorry, no client information could be found.';
-        }
+    case 'account-update':
         include '../view/client-update.php';
-        exit;
         break;
 
-    case 'updateAccount':
-        $clientFirstname = trim(filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_STRING));
-        $clientLastname = trim(filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_STRING));
-        $clientEmail = trim(filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL));
+    case 'updateClient':
+        $clientFirstname = filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_STRING);
+        $clientLastname = filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_STRING);
+        $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_STRING);
         $clientId = filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_NUMBER_INT);
         $clientEmail = checkEmail($clientEmail);
         $existingEmail = checkExistingEmail($clientEmail);
 
-        // Check for existing email address in the table
-        if ($existingEmail) {
-            $message = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
+        if ($clientEmail != $_SESSION['clientData']['clientEmail']) {
+            if ($existingEmail) {
+                $message = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
+                include '../view/login.php';
+                exit;
+            }
+        }
+
+        if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail)) {
+            $message = '<p>Please fill all fields!</p>';
             include '../view/client-update.php';
             exit;
         }
 
-        if (
-            empty($clientFirstname) || empty($clientLastname) || empty($clientEmail)
-        ) {
-            $message = "<p class='notice'>Please fill in the entire form.</p>";
-            include '../view/client-update.php';
-            exit;
-        }
+        $updateResult = updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId);
 
-        $updateResult = updateAccount($clientFirstname, $clientLastname, $clientEmail, $clientId);
-        if ($updateResult) {
-            $message = "<p class='notice'>Congratulations, your profile has been succesfully updated.</p>";
+        $clientData = getClientById($_SESSION['clientData']['clientId']);
+        array_pop($clientData);
+        $_SESSION['clientData'] = $clientData;
+
+        if ($updateResult === 1) {
+            $message = "<p class='notice'>Congratulations, your account was successfully updated.</p>";
             $_SESSION['message'] = $message;
-            header('location: /view/admin.php/');
+            header('location: /phpmotors/accounts/');
             exit;
         } else {
-            $message = "<p class='notice'>Error. Your profile was not updated.</p>";
+            $message = "<p class='notice'>Error. your account was not updated.</p>";
             include '../view/client-update.php';
             exit;
         }
-        // // Store the array into the session
-        // $_SESSION['clientData'] = $clientData;
-        // // Send them to the admin view
-        // include '../view/admin.php';
-        // exit;
+
+        break;
+
+    case 'changePassword':
+        $clientPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
+        $clientId = filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_NUMBER_INT);
+        $passwordCheck = checkPassword($clientPassword);
+
+        if (!$passwordCheck) {
+            $passMessage = '<p>Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character!</p>';
+            include '../view/client-update.php';
+            exit;
+        }
+        if (empty($passwordCheck)) {
+            $passMessage = '<p>Please fill all fields!</p>';
+            include '../view/client-update.php';
+            exit;
+        }
+
+        $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
+
+        $updateResult = updatePassword($hashedPassword, $clientId);
+        if ($updateResult === 1) {
+            $message = "<p class='notice'>Congratulations, your password was successfully updated.</p>";
+            $_SESSION['message'] = $message;
+            header('location: /phpmotors/accounts/');
+            exit;
+        } else {
+            $message = "<p class='notice'>Error. your password was not updated.</p>";
+            $_SESSION['message'] = $message;
+            header('location: /phpmotors/accounts/');
+            exit;
+        }
+
         break;
 
     default:
-        $classificationList = buildClassificationList($classifications);
-
         include '../view/admin.php';
         break;
 }
