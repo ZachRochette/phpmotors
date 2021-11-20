@@ -19,26 +19,6 @@ $classifications = getClassifications();
 $navList = Navigation($classifications);
 
 $logout = "<a href='/phpmotors/index.php?action=" . urlencode('logout') . "'title='Logout Here' id='acc'>Logout</a>";
-// // Build a navigation bar using the $classifications array
-// $navList = '<ul>';
-// $navList .= "<li><a href='/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
-// foreach ($classifications as $classification) {
-//     $navList .= "<li><a href='/phpmotors/index.php?action=" . urlencode($classification['classificationName']) . "' title='View our $classification[classificationName] product line'>$classification[classificationName]</a></li>";
-// }
-// $navList .= '</ul>';
-
-// $classifList = '<select name="classificationId">';
-// foreach ($classifications as $classification) {
-//     $classifList .= "<option value='$classification[classificationId]'";
-//     if (isset($classificationId)) {
-//         if ($classifiaction['classificationID'] === $classificationId) {
-//             $classifList .= ' selected ';
-//         }
-//     }
-
-//     $classifList .= ">$classification[classificationName]</option>";
-// }
-// $classifList .= '</select>';
 
 $action = filter_input(INPUT_GET, 'action');
 if ($action == NULL) {
@@ -47,12 +27,19 @@ if ($action == NULL) {
 
 switch ($action) {
     case 'add-classification':
-        //filter and store data
-        $classificationName = trim(filter_input(INPUT_POST, 'classificationName', FILTER_SANITIZE_EMAIL));
-        // $clientEmail = checkEmail($clientEmail);
+        // Filter and store the data
+        $classificationName = trim(filter_input(INPUT_POST, 'classificationName', FILTER_SANITIZE_STRING));
+
+        // Check the classification name is not longer than 30 characters
+        if (strlen($classificationName) > 30) {
+            $message = '<p>Please provide a classification name that is no longer than 30 characters.</p>';
+            include '../view/add-classification.php';
+            exit;
+        }
+
         // Check for missing data
         if (empty($classificationName)) {
-            $message = '<p>Please provide a car type.</p>';
+            $message = '<p>Please provide information for empty form field.</p>';
             include '../view/add-classification.php';
             exit;
         }
@@ -61,12 +48,11 @@ switch ($action) {
         $classification_output = input_carclassification($classificationName);
 
         // Check and report the result
-        if ($classification_output  === 1) {
-            $message = "<p>Thanks for your submission</p>";
-            include '../view/vehicle-man.php';
+        if ($classification_output === 1) {
+            header("Location: http://lvh.me/phpmotors/vehicles/index.php?action=addClassification");
             exit;
         } else {
-            $message = "<p>Sorry $clientFirstname, but the submission failed. Please try again.</p>";
+            $message = "<p>Sorry adding the classification failed. Please try again.</p>";
             include '../view/add-classification.php';
             exit;
         }

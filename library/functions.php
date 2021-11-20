@@ -19,9 +19,7 @@ function Navigation($classifications)
     $navList = '<ul>';
     $navList .= "<li><a href='/phpmotors/' title='View the PHP Motors home page'>Home</a></li>";
     foreach ($classifications as $classification) {
-        $navList .= "<li><a href='/phpmotors/vehicles/?action=classification&classificationName="
-            . urlencode($classification['classificationName']) .
-            "' title='View our $classification[classificationName] lineup of vehicles'>$classification[classificationName]</a></li>";
+        $navList .= "<li><a href='/phpmotors/vehicles/?action=classification&classificationName=" . urlencode($classification['classificationName']) . "' title='View our $classification[classificationName] lineup of vehicles'>$classification[classificationName]</a></li>";
     }
     $navList .= '</ul>';
     return $navList;
@@ -44,13 +42,9 @@ function buildVehiclesDisplay($vehicles)
     $dv = '<ul id="inv-display">';
     foreach ($vehicles as $vehicle) {
         $dv .= '<li>';
-        $dv .= "<a href='/phpmotors/vehicles/?action=vehicleInfo&invId="
-            . urlencode($vehicle['invId']) .
-            "' title='View $vehicle[invMake] $vehicle[invModel]'><img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'></a>";
+        $dv .= "<a href='/phpmotors/vehicles/?action=vehicleInfo&invId=" . urlencode($vehicle['invId']) . "' title='View $vehicle[invMake] $vehicle[invModel]'><img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'></a>";
         $dv .= '<hr>';
-        $dv .= "<a href='/phpmotors/vehicles/?action=vehicleInfo&invId="
-            . urlencode($vehicle['invId']) .
-            "' title='View $vehicle[invMake] $vehicle[invModel]'>$vehicle[invMake] $vehicle[invModel]</a>";
+        $dv .= "<a href='/phpmotors/vehicles/?action=vehicleInfo&invId=" . urlencode($vehicle['invId']) . "' title='View $vehicle[invMake] $vehicle[invModel]'>$vehicle[invMake] $vehicle[invModel]</a>";
         $dv .= "<span>$$vehicle[invPrice]</span>";
         $dv .= '</li>';
     }
