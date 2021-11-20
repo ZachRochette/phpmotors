@@ -14,7 +14,7 @@
             <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
         </header>
         <nav>
-            <?php //require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php';
+            <?php
             echo $navList; ?>
         </nav>
         <main>
@@ -26,7 +26,7 @@
                 <p>Fuzzy dice!</p>
             </div>
             <input class="button" alt="Own Today Button" type="image" src="/phpmotors/images/site/own_today.png" />
-            <img id="delorean_image" src="/phpmotors/images/delorean.jpg" alt="Delorean image">
+            <img id="delorean_image" src="/phpmotors/images/vehicles/delorean.jpg" alt="Delorean image">
             <div class="grid_container">
                 <h2 id="upgrades">Delorean Upgrades</h2>
                 <div class="upgrade_box1">

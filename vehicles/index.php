@@ -78,8 +78,8 @@ switch ($action) {
         $invMake = trim(filter_input(INPUT_POST, 'invMake', FILTER_SANITIZE_STRING));
         $invModel = trim(filter_input(INPUT_POST, 'invModel', FILTER_SANITIZE_STRING));
         $invDescription = trim(filter_input(INPUT_POST, 'invDescription', FILTER_SANITIZE_STRING));
-        $invImage = trim(filter_input(INPUT_POST, 'invImage', FILTER_SANITIZE_STRING));
-        $invThumbnail = trim(filter_input(INPUT_POST, 'invThumbnail', FILTER_SANITIZE_STRING));
+        $invImage = "/phpmotors/images/vehicles/no-image.png";
+        $invThumbnail = "/phpmotors/images/vehicles/no-image.png";
         $invPrice = trim(filter_input(INPUT_POST, 'invPrice', FILTER_SANITIZE_STRING));
         $invStock = trim(filter_input(INPUT_POST, 'invStock', FILTER_SANITIZE_STRING));
         $invColor = trim(filter_input(INPUT_POST, 'invColor', FILTER_SANITIZE_STRING));
@@ -137,8 +137,8 @@ switch ($action) {
         $invMake = filter_input(INPUT_POST, 'invMake', FILTER_SANITIZE_STRING);
         $invModel = filter_input(INPUT_POST, 'invModel', FILTER_SANITIZE_STRING);
         $invDescription = filter_input(INPUT_POST, 'invDescription', FILTER_SANITIZE_STRING);
-        $invImage = filter_input(INPUT_POST, 'invImage', FILTER_SANITIZE_STRING);
-        $invThumbnail = filter_input(INPUT_POST, 'invThumbnail', FILTER_SANITIZE_STRING);
+        $invImage = "/phpmotors/images/vehicles/no-image.png";
+        $invThumbnail = "/phpmotors/images/vehicles/no-image.png";
         $invPrice = filter_input(INPUT_POST, 'invPrice', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $invStock = filter_input(INPUT_POST, 'invStock', FILTER_SANITIZE_NUMBER_INT);
         $invColor = filter_input(INPUT_POST, 'invColor', FILTER_SANITIZE_STRING);
@@ -195,6 +195,30 @@ switch ($action) {
             header('location: /phpmotors/vehicles/');
             exit;
         }
+        break;
+
+    case 'classification':
+        $classificationName = filter_input(INPUT_GET, 'classificationName', FILTER_SANITIZE_STRING);
+        $vehicles = getVehiclesByClassification($classificationName);
+        if (!count($vehicles)) {
+            $message = "<p class='notice'>Sorry, no $classificationName could be found.</p>";
+        } else {
+            $vehicleDisplay = buildVehiclesDisplay($vehicles);
+        }
+
+        include '../view/classification.php';
+        break;
+
+    case 'vehicleInfo':
+        $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
+        $vehicleInfo = getVehicleById($invId);
+        if (!isset($vehicleInfo)) {
+            $message = "<p class='notice'>Sorry, no $invId $vehicleInfo[invModel] could be found.</p>";
+        } else {
+            $vehicleDetails = buildVehicleInfo($vehicleInfo);
+        }
+
+        include '../view/vehicle-detail.php';
         break;
 
     default:
