@@ -13,13 +13,13 @@ if (isset($_SESSION['message'])) {
 </head>
 
 <body>
-    <div class="content">
-        <div class='header'>
-            <img src="../images/site/logo.png" alt="PHP Motors Logo">
-            <?php require_once 'header.php'; ?>
-        </div>
+    <div id="wrapper">
+        <header>
+            <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
+        </header>
         <nav>
-            <?php echo $navList; ?>
+            <?php
+            echo $navList; ?>
         </nav>
         <main>
             <h1>Image Management</h1>
@@ -53,7 +53,9 @@ if (isset($_SESSION['message'])) {
                 echo $imageDisplay;
             } ?>
         </main>
-        <?php require_once '../footer.php'; ?>
+        <footer>
+            <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>
+        </footer>
     </div>
 </body>
 
