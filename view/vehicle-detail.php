@@ -25,6 +25,9 @@
             <div class="vehicleInfo">
                 <?php if (isset($vehicleDetails)) {
                     echo $vehicleDetails;
+                }
+                if (isset($additionalImages)) {
+                    echo $images;
                 } ?>
             </div>
         </main>

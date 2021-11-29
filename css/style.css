@@ -275,6 +275,7 @@ footer {
   }
 
   /* For vehicle display in classification view */
+  /* For vehicle display in classification view */
   #inv-display {
     flex-flow: row wrap;
     justify-content: flex-start;
