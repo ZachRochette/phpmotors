@@ -14,6 +14,10 @@ require_once '../model/vehicles-model.php';
 require_once '../library/functions.php';
 // Get the uploads model
 require_once '../model/uploads-model.php';
+// Get the account model.
+require_once '../model/accounts-model.php';
+// Get the review model
+require_once '../model/reviews-model.php';
 
 
 // Get the array of classifications
@@ -202,6 +206,18 @@ switch ($action) {
         $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
         $vehicleInfo = getVehicleById($invId);
         $additionalImages = getAdditionalImages($invId);
+
+        // Get the vehicle reviews.
+        $reviewList = getInventoryReviews($vehicleId);
+
+        // Build the html for the review list.
+        $reviewHTML = '<div class = "reviews">';
+        foreach ($reviewList as $review) {
+            $reviewHTML .= buildReview($review['clientFirstname'], $review['clientLastname'], $review['reviewDate'], $review['reviewText']);
+        }
+        $reviewHTML .= "</div>";
+
+
         if (!isset($vehicleInfo)) {
             $message = "<p class='notice'>Sorry, no $vehicleInfo[invMake] $vehicleInfo[invModel] could be found.</p>";
         } else {

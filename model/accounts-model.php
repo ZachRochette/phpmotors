@@ -5,7 +5,8 @@
 
 
 //function to handle site registrations
-function regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassword){
+function regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassword)
+{
     // Create a connection object using the phpmotors connection function
     $db = phpmotorsConnect();
     // The SQL statement
@@ -31,7 +32,8 @@ function regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassw
 }
 
 // Check for an existing email address
-function checkExistingEmail($clientEmail) {
+function checkExistingEmail($clientEmail)
+{
     $db =  phpmotorsConnect();
     $sql = 'SELECT clientEmail FROM clients WHERE clientEmail = :email';
     $stmt = $db->prepare($sql);
@@ -39,7 +41,7 @@ function checkExistingEmail($clientEmail) {
     $stmt->execute();
     $matchEmail = $stmt->fetch(PDO::FETCH_NUM);
     $stmt->closeCursor();
-    if(empty($matchEmail)){
+    if (empty($matchEmail)) {
         return 0;
     } else {
         return 1;
@@ -47,7 +49,8 @@ function checkExistingEmail($clientEmail) {
 }
 
 // Get client data based on an email address
-function getClient($clientEmail){
+function getClient($clientEmail)
+{
     $db = phpmotorsConnect();
     $sql = 'SELECT clientId, clientFirstname, clientLastname, clientEmail, clientLevel, clientPassword FROM clients WHERE clientEmail = :clientEmail';
     $stmt = $db->prepare($sql);
@@ -59,7 +62,8 @@ function getClient($clientEmail){
 }
 
 // Get client data based on ID
-function getClientById($clientId){
+function getClientById($clientId)
+{
     $db = phpmotorsConnect();
     $sql = 'SELECT clientId, clientFirstname, clientLastname, clientEmail, clientLevel, clientPassword FROM clients WHERE clientId = :clientId';
     $stmt = $db->prepare($sql);
@@ -70,7 +74,8 @@ function getClientById($clientId){
     return $clientData;
 }
 
-function updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId) {
+function updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId)
+{
     $db = phpmotorsConnect();
     $sql = 'UPDATE clients SET clientFirstname = :clientFirstname, clientLastname = :clientLastname, clientEmail = :clientEmail
      WHERE clientId = :clientId';
@@ -83,9 +88,10 @@ function updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId
     $rowsChanged = $stmt->rowCount();
     $stmt->closeCursor();
     return $rowsChanged;
-  }
+}
 
-function updatePassword($clientPassword, $clientId) {
+function updatePassword($clientPassword, $clientId)
+{
     $db = phpmotorsConnect();
     $sql = 'UPDATE clients SET clientPassword = :clientPassword
      WHERE clientId = :clientId';
@@ -96,4 +102,4 @@ function updatePassword($clientPassword, $clientId) {
     $rowsChanged = $stmt->rowCount();
     $stmt->closeCursor();
     return $rowsChanged;
-  }
+}

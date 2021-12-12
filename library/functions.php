@@ -241,3 +241,35 @@ function resizeImage($old_image_path, $new_image_path, $max_width, $max_height)
     // Free any memory associated with the old image
     imagedestroy($old_image);
 } // ends resizeImage function
+
+// Build the HTML review block
+function buildReview($clientFirstName, $clientLastName, $date, $reviewText)
+{
+    $htmlText = "<p>";
+
+    // Add clients name
+    $htmlText .= substr($clientFirstName, 0, 1) . ". " . $clientLastName;
+
+    // Add the date
+    $timestamp = strtotime($date);
+    $htmlText .= "<br>Posted on: " . date('m/d/Y H:i:s', $timestamp);
+
+    // Review text
+    $htmlText .= "<br><br>" . $reviewText;
+
+    $htmlText .= "</p>";
+    return $htmlText;
+}
+
+// Build the review list
+function buildReviewItem($reviewDate, $reviewId)
+{
+    $htmlText = '<li>';
+    $timestamp = strtotime($reviewDate);
+    $htmlText .= 'Review Created on: ' . date('m/d/Y H:i:s', $timestamp);
+    $htmlText .= ' <a href = "/reviews/index.php?action=confirmEdit&review=' . $reviewId . '">Edit</a>';
+    $htmlText .= ' | ';
+    $htmlText .= '<a href = "/reviews/index.php?action=confirmDelete&review=' . $reviewId . '">Delete</a>';
+    $htmlText .= '</li>';
+    return $htmlText;
+}
