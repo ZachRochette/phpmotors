@@ -40,6 +40,8 @@ if (!$_SESSION['loggedin']) {
                 echo "<h3>Vehicles Management</h3>
                 <p>Use this link to administer inventory: <a href='/phpmotors/vehicles/index.php?action=" . urlencode('vehicles') . "' title='Vehicle Management Page'>Vehicle Management Page</a></p>";
             } ?>
+            <h3>Reviews</h3>
+            <?php echo $reviewHTML; ?>
         </main>
         <hr>
         <footer>
